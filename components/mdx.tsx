@@ -1,15 +1,21 @@
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-import type { MDXComponents } from 'mdx/types';
+// components/mdx.tsx
+import defaultMdxComponents from "fumadocs-ui/mdx";
+import type { MDXComponents } from "mdx/types";
+import { OfficerCarousel } from "@/components/officer-carousel";
 
-export function getMDXComponents(components?: MDXComponents) {
+export async function getMDXComponents(
+  base: MDXComponents,
+  orgId?: string
+): Promise<MDXComponents> {
   return {
     ...defaultMdxComponents,
-    ...components,
-  } satisfies MDXComponents;
-}
-
-export const useMDXComponents = getMDXComponents;
-
-declare global {
-  type MDXProvidedComponents = ReturnType<typeof getMDXComponents>;
+    ...base,
+    ...(orgId
+      ? {
+          OfficerCarousel: ({ department }: { department: string }) => (
+            <OfficerCarousel orgId={orgId} department={department} />
+          ),
+        }
+      : {}),
+  };
 }

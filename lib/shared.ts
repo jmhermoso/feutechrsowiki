@@ -1,4 +1,5 @@
-export const appName = 'My App';
+export const appHome = 'FEU Tech Founding Book';
+export const appName = '<- Back to Organizations';
 export const docsRoute = '/docs';
 export const docsImageRoute = '/og/docs';
 export const docsContentRoute = '/llms.mdx/docs';

@@ -1,12 +1,18 @@
+// lib/layout.shared.tsx
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { appName, gitConfig } from './shared';
+import type { SidebarProps } from 'fumadocs-ui/layouts/docs/slots/sidebar';
+import { appName } from './shared';
 
 export function baseOptions(): BaseLayoutProps {
   return {
     nav: {
-      // JSX supported
       title: appName,
     },
-    githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
+  };
+}
+
+export function sidebarOptions(): SidebarProps {
+  return {
+    className: 'backdrop-blur-md bg-background/60 border-r border-border/50',
   };
 }

@@ -1,0 +1,32 @@
+{
+  "title": "tec",
+  "pages": [
+    "---iTamaraw Esports Club---",
+    "index",
+    "IndexPartners",
+    "IndexEvents",
+
+    "---Esports Management---",
+    "VarsityIntro",
+    "VarsityRoles",
+    "VarsityOperation",
+    "VarsityStudent",
+    "VarsityUni",
+    "VarsityComms",
+    "VarsityKey",
+    "VarsityAppendices",
+
+    "---Departments---",
+    "DeptSecretariat",
+    "DeptCreatives",
+    "DeptProduction",
+    "DeptPrograms",
+    "DeptLogistics",
+    "DeptExecutiveBoard",
+
+    "---Resources---",
+    "ResourcesBrandGuide",
+    "ResourcesBylaws",
+    "ResourcesHistory"
+  ]
+}
