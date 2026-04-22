@@ -3,10 +3,12 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import { OfficerCarousel } from "@/components/officer-carousel";
 
-export async function getMDXComponents(
+// 1. Remove 'async'
+// 2. Change 'Promise<MDXComponents>' to just 'MDXComponents'
+export function getMDXComponents(
   base: MDXComponents,
   orgId?: string
-): Promise<MDXComponents> {
+): MDXComponents {
   return {
     ...defaultMdxComponents,
     ...base,
