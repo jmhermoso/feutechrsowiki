@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { racSource, getOrgColor } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { baseOptions, sidebarOptions } from '@/lib/layout.shared';
@@ -12,6 +13,7 @@ export default function Layout({ children }: LayoutProps<'/rac'>) {
         sidebar={sidebarOptions()}
       >
         {children}
+        <Analytics />
       </DocsLayout>
     </DocsProvider>
   );

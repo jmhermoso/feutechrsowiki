@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { source } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { baseOptions } from '@/lib/layout.shared';
@@ -8,6 +9,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
     <DocsProvider api="/api/search/docs">
       <DocsLayout tree={source.getPageTree()} {...baseOptions()}>
         {children}
+        <Analytics />
       </DocsLayout>
     </DocsProvider>
   );

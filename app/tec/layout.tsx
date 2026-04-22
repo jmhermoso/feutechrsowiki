@@ -1,4 +1,4 @@
-// app/tec/layout.tsx
+import { Analytics } from '@vercel/analytics/next';
 import { ReactNode } from 'react';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { DocsProvider } from '@/components/providers';
@@ -21,6 +21,7 @@ export default async function Layout({ children }: LayoutProps) {
         sidebar={sidebarOptions()}
       >
         {children}
+        <Analytics />
       </DocsLayout>
     </DocsProvider>
   );

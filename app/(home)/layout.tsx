@@ -1,4 +1,4 @@
-// app/(home)/layout.tsx
+import { Analytics } from '@vercel/analytics/next';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { baseOptions } from '@/lib/layout.home';
 
@@ -10,6 +10,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <HomeLayout {...baseOptions()} searchToggle={{ enabled: false }}>
       {children}
+      <Analytics />
     </HomeLayout>
   );
 }
