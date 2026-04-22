@@ -1,6 +1,9 @@
 // lib/supabase.ts
 import { createClient } from "@supabase/supabase-js";
 
+// ADD THIS LINE TEMPORARILY:
+console.log("CHECKING ENVS:", process.env.NEXT_PUBLIC_SUPABASE_URL ? "FOUND URL" : "URL IS MISSING");
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
