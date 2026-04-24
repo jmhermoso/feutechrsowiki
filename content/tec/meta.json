@@ -3,30 +3,21 @@
   "pages": [
     "---iTamaraw Esports Club---",
     "index",
-    "IndexPartners",
-    "IndexEvents",
-
-    "---Esports Management---",
-    "VarsityIntro",
-    "VarsityRoles",
-    "VarsityOperation",
-    "VarsityStudent",
-    "VarsityUni",
-    "VarsityComms",
-    "VarsityKey",
-    "VarsityAppendices",
+    "PartnersAndSponsors",
+    "Events",
 
     "---Departments---",
-    "DeptSecretariat",
-    "DeptCreatives",
-    "DeptProduction",
-    "DeptPrograms",
-    "DeptLogistics",
-    "DeptExecutiveBoard",
+    "Varsity",
+    "Secretariat",
+    "Creatives",
+    "Production",
+    "Programs",
+    "Logistics",
+    "Executive",
 
     "---Resources---",
-    "ResourcesBrandGuide",
-    "ResourcesBylaws",
-    "ResourcesHistory"
+    "BrandGuide",
+    "Bylaws",
+    "History"
   ]
 }
