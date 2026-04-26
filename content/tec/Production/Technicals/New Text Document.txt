@@ -1,0 +1,122 @@
+# Section 2: Technical Operations
+
+This section provides the technical standards and engineering workflows required to maintain high-fidelity audio, stable video feeds, and resilient broadcasts. These protocols ensure that technical execution remains consistent across different officers and venues.
+
+---
+
+## 2.1 Presentations and Media
+
+Presentations are the primary visual interface for the audience. Managing how slides are received, displayed, and captured is critical to maintaining a professional appearance and protecting operator privacy.
+
+### Slide Acquisition and Software
+Presenters typically provide content via **Canva (Web-based)** or **PowerPoint (Local File)**. 
+
+* **Canva / Web Sources:** Must be run in a dedicated browser window. Use "Presenter View" to keep notes on the operator screen while the audience sees the clean output.
+* **PowerPoint / Local Files:** Always download the file to the local machine rather than running it from a USB drive to prevent "stuttering" during transitions.
+* **Media Assets:** Any video files within slides should be tested for audio levels 30 minutes before the event.
+
+### Professional Display Control
+To maintain production quality, you must never "Screen Share" the entire desktop. This prevents the audience from seeing system notifications, taskbars, or private folders.
+
+**The Extended Display Method:**
+1.  **System Settings:** Set the PC to "Extend these displays" rather than "Duplicate."
+2.  **The Handshake:** The primary monitor is for the operator (OBS/vMix/Notes); the secondary output (HDMI/DisplayPort) is sent to the projector or stream encoder.
+3.  **Application Specifics:**
+    * **PowerPoint:** Use the "Present on Monitor 2" setting. This shows slides in full-screen on the output while keeping notes on Monitor 1.
+    * **Canva:** Open the "Present" window and drag the "Full Screen" tab to the second monitor.
+    * **Encoder Capture:** In OBS/vMix, use **Window Capture** or **Display Capture (Monitor 2)**.
+
+---
+
+## 2.2 Audio Engineering
+
+The audio signal flow is the most sensitive part of the production. Any break in this chain results in an immediate loss of viewer engagement.
+
+### Signal Flow and Equipment
+Officers must understand the path an audio signal takes from source to output to enable rapid troubleshooting.
+* **The Chain:** Input (Mic/PC) → Pre-amp/Mixer → Compressor/Limiter → Encoder (OBS/vMix) → Output (Stream).
+* **Mic Management:** * **Dynamic Mics:** Durable, low sensitivity; ideal for loud stages.
+    * **Condenser Mics:** High detail; ideal for controlled booth environments.
+
+### Troubleshooting and "The Black Book"
+Standardized fixes for common audio failures:
+* **Ground Loops (Humming):** Use a DI box or a ground lift on the mixer.
+* **Sync Issues:** If audio leads video, apply a millisecond delay in the streaming software (typically 100ms–300ms).
+* **Gain Staging:** Ensure the signal is "Green" at every stage. Distortion at the mixer cannot be fixed later in the chain.
+
+---
+
+## 2.3 Livestreaming and Technical Direction
+
+The Technical Director (TD) manages the final mix of all video and asset sources into a single broadcast stream.
+
+### Game Observation (Esports)
+The Observer’s role is to act as the "eyes" of the audience, anticipating action to maintain narrative flow.
+
+| Angle Type | Purpose | Execution |
+| :--- | :--- | :--- |
+| **Clutching** | High-intensity 1vX | Focus strictly on the surviving player’s POV; hide non-essential UI. |
+| **Map Cinematics** | Transitional B-roll | Smooth, slow panning shots of map environments during downtime. |
+| **Aerial/Top-Down** | Team fight clarity | Birds-eye view of large engagements to show positioning/utility. |
+| **Contested Buffs** | Neutral objectives | Focus on Baron, Dragons, or Map Buffs when teams are in proximity. |
+| **Objective Points** | Win-conditions | Shots of Spike plants, Herald spawns, or Payload progress. |
+| **Creative/Funny** | Engagement | "Easter egg" looks at map details or player interactions during pauses. |
+
+### Network Infrastructure
+* **Hardwire Rule:** Never stream over Wi-Fi. Always utilize a Cat6 Ethernet connection.
+* **IP Management:** Assign Static IPs for multi-PC setups to prevent NDI sources from dropping.
+* **Encoding Specs:** * **1080p 60fps:** 6000–8000 kbps.
+    * **720p 60fps:** 3500–4500 kbps.
+
+---
+
+## 2.4 Camera Composition and Engineering
+
+### Transmission and Power Management
+* **Transmission:** Use SDI for runs over 50ft; HDMI is prone to signal degradation.
+* **Power:** Use **Dummy Batteries** (DC Couplers) or External V-Mount batteries for continuous power.
+* **Thermal Management:** Keep screens flipped out and use external cooling fans to prevent mirrorless camera overheating.
+
+### Composition Types
+| Subject | Framing | Objective |
+| :--- | :--- | :--- |
+| **Casters** | Medium Close-up | Engage the audience with direct eye contact. |
+| **Players** | Close-up | Capture emotional reactions and high-intensity movement. |
+| **Crowd/Host** | Wide/Roaming | Establish the scale and energy of the live venue. |
+
+---
+
+## 2.5 Asset Integration
+
+Assets provide the professional "sheen" of a broadcast, categorized into static and dynamic elements.
+
+### Static Overlays and Transitions
+* **Stingers:** Short animations with an alpha channel. Set a "cut point" (ms) to switch scenes exactly when the screen is obscured.
+* **Full-Screen Plates:** Standard scenes for "Starting Soon," "Intermission," and "Ending."
+* **Promo Videos:** Must be set to "un-mute" on activation and "loop" only if necessary.
+
+### Dynamic Overlays
+* **Lower Thirds:** Nameplates for speakers or players. Should appear for 5–10 seconds.
+* **Scoreboards:** Linked to web-based controllers or spreadsheets for real-time updates.
+* **Live Alerts:** Pop-ups for interactions (donations, follows).
+
+---
+
+## 2.6 Redundancy: Plan B
+
+### Internet and Hardware Failover
+* **Network:** Maintain a secondary Hotspot or ISP line via a bonding router.
+* **Emergency Scenes:** Always have a "Technical Difficulties" scene ready with music and an animated loop.
+
+### The "Go/No-Go" Protocol
+* **-15 Minutes:** Verify all signals. Cut unstable sources from the show.
+* **The Record Rule:** Always record the stream locally to an SSD. If the internet fails, the VOD can be uploaded immediately after the event.
+
+---
+
+### 🟢 Tech Ops FAQ
+> **What do we do if the main streaming PC crashes?**
+> Switch to a "Technical Difficulties" scene on a secondary laptop if available while rebooting the main station.
+>
+> **How do we prevent wireless video lag?**
+> Ensure "Line-of-Sight" between transmitter and receiver. Avoid concrete walls or placing antennas behind large crowds.

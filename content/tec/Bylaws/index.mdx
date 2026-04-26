@@ -1,26 +1,607 @@
 ---
-title: Bylaws
+title: Test
 description: Overview of iTamaraws Esports Club's Events
+icon: Palette
 ---
 
-# iTamaraws Esports Club (TEC)
+# Section 1: Content Posting and Creative Workflow
 
-The iTamaraws Esports Club is the premier student-led esports organization of FEU Institute of Technology. We aim to foster a community of competitive players, casters, and production enthusiasts.
+This section serves as the operational manual for the creative pipeline. It moves from high-level discovery to the granular details of technical handover. By following this architecture, the department maintains a standardized quality of output regardless of which officer is leading the project.
 
-## Current Executive Officers (A.Y. 2025-2026)
+---
 
-| Position | Name |
+## The Production Pipeline at a Glance
+
+<Mermaid chart={`
+graph LR
+    A["🔍 Pre-Pre<br/>Discovery"] --> B["📋 Pre-Prod<br/>Blueprint"]
+    B --> C["🎬 On-Site<br/>Shoot"]
+    C --> D["✂️ Post-Prod<br/>Edit & Publish"]
+    
+    A1["Request → SPOC<br/>Scope → Feasibility"] -.->|Details| A
+    B1["Storyboard → Scout<br/>Equipment Manifest"] -.->|Details| B
+    C1["Callsheet → Shotlist<br/>Run-of-Show"] -.->|Details| C
+    D1["Ingest → Edit<br/>Handshake"] -.->|Details| D
+    
+    style A fill:#e8f5e9
+    style B fill:#e3f2fd
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+`} />
+
+**Key Principle:** Each phase has specific **inputs**, **outputs**, and **decision gates**. A project cannot advance to the next phase until the previous phase deliverables are approved.
+
+---
+
+## 1.1 Pre-Pre: The Discovery Phase
+
+The discovery phase acts as the filter for the entire department. It is designed to prevent resource mismanagement by ensuring a project is viable before any technical labor begins.
+
+### Understanding the Request and Client Intake
+
+The process is initiated via a formal request. To maintain clear communication, the production lead must identify a **Single Point of Contact (SPOC)**. This prevents "instruction creep" where multiple voices from a client organization provide conflicting directions.
+
+| Requirement | Purpose |
 | :--- | :--- |
-| President | [Name] |
-| VP Internal | [Name] |
-| VP External | [Name] |
-| Secretary General | [Name] |
-| Treasurer | [Name] |
+| **SPOC Identification** | Prevents conflicting revisions and communication bottlenecks. |
+| **Core Objective** | Defines if the content is for archival, promotion, or live broadcast. |
+| **Visual References** | 2-3 external links to align on the expected "look and feel." |
 
-## Mission and Vision
+**🎯 Action Checklist:**
+- [ ] Schedule intake meeting with client (within 24 hours of request)
+- [ ] Identify and document SPOC name, email, phone
+- [ ] Ask: "What happens if this project succeeds?"
+- [ ] Collect 2-3 reference videos/images
+- [ ] Document: Core objective, deliverable format, target audience
 
-**Mission**
-To provide a platform for FEU Tech students to excel in the esports industry through competitive gaming, professional event management, and community building.
+---
 
-**Vision**
-To be the leading collegiate esports organization in the Philippines, producing world-class talent and industry-standard events.
+### Scope Definition and Limitations
+
+With the objective clear, the lead must define the boundaries of the project. Establishing the "Creative Freedom" vs. "Client Mandates" at this stage prevents friction during the editing process.
+
+**The Creative Freedom Matrix:**
+
+| Zone | Who Decides | Examples |
+| :--- | :--- | :--- |
+| **Client Mandate** | Client only | Brand colors, messaging, legal compliance |
+| **Collaborative** | Lead + Client | Shot composition, narrative structure, pacing |
+| **Creative Freedom** | Department only | Technical crew, specific equipment, color grading approach |
+
+> **Critical:** A critical component here is the **Scope Creep Policy**, which stipulates that any request changing the workload by more than 20% after initial approval must be processed as a separate project.
+
+**💡 Real-World Example:**
+- **Original Scope:** 3-minute promotional video (8 hrs labor estimated)
+- **Mid-Production Add:** Client requests behind-the-scenes B-roll (+4 hrs) = 50% increase
+- **Action:** Stop work. Process as Change Order or separate project.
+
+---
+
+### Research and Feasibility
+
+The final step of the discovery phase is a cold assessment of the department's current capabilities. This involves two critical audits:
+
+<Tabs items={['Hardware Audit', 'Location Audit']}>
+  <Tab value="Hardware Audit">
+    **Hardware Audit Checklist:**
+    - [ ] High-speed cameras available for slow-motion?
+    - [ ] Specific lenses (macro, ultra-wide, telephoto) in stock?
+    - [ ] Audio gear meeting client's acoustic requirements?
+    - [ ] Lighting kit sufficient for venue size and tone?
+    - [ ] Backup power (batteries, generators) available?
+    - [ ] Storage media (SSD, SD cards) sufficient for expected footage volume?
+  </Tab>
+  <Tab value="Location Audit">
+    **Location Audit Checklist:**
+    - [ ] Power: How many amps available? Where are circuits?
+    - [ ] Acoustics: Is the space naturally reverberant (cathedral) or deadened (warehouse)?
+    - [ ] Access: Loading dock? Elevators? Stairwell dimensions for gear?
+    - [ ] Environmental: Weather patterns? Noise permits? Parking?
+    - [ ] Safety: Hazards (trip wires, heights, chemical exposure)?
+    - [ ] Insurance: Are there location-specific liability requirements?
+  </Tab>
+</Tabs>
+
+---
+
+### 🟢 Pre-Pre FAQ
+
+<Accordions>
+  <Accordion title="How do we handle a client who refuses to provide a SPOC?">
+    Inform the client that without a single point of contact, the production timeline will be extended to account for conflicting revisions, and the "Kill Switch" policy will be strictly enforced. Document this conversation.
+  </Accordion>
+  <Accordion title="What if the request exceeds our current equipment's capabilities?">
+    Flag this in the feasibility report. The project may proceed only if the client provides the budget for rentals or accepts a lower technical tier of delivery. Example: "We can deliver 4K at 60fps with rental gear (+$2,500), or 1080p 60fps with in-house gear."
+  </Accordion>
+  <Accordion title="Who owns the feasibility decision?">
+    The Production Lead makes the final call. If uncertain, escalate to the Department Head.
+  </Accordion>
+</Accordions>
+
+---
+
+## 1.2 Pre-Production: The Blueprint
+
+Pre-production is the phase where abstract ideas are converted into actionable technical data. Without a blueprint, on-site execution becomes reactive rather than proactive.
+
+### Creative Assets and Storyboarding
+
+Visualizing the project is the most effective way to save time during a shoot. The team begins with three sequential deliverables:
+
+<Tabs items={['Logline', 'Moodboarding', 'Storyboarding']}>
+  <Tab value="Logline">
+    **The Logline (1 sentence)**
+    
+    A single sentence that keeps the narrative laser-focused.
+    
+    - ❌ Bad: "A video about our company culture"
+    - ✅ Good: "A day-in-the-life following Sarah from HR as she onboards a new employee and discovers an unexpected mentorship"
+    
+    **Tips:**
+    - Answer: "What is the core emotional journey?"
+    - Use active verbs (following, discovering, building, revealing)
+    - Keep it under 20 words
+  </Tab>
+  <Tab value="Moodboarding">
+    **Moodboarding (5-10 reference images)**
+    
+    Aligns aesthetic choices like color palettes, lighting style, and tone.
+    
+    - Collect images from Unsplash, Pinterest, or films
+    - Organize by: "Dark & moody" vs. "Bright & energetic"
+    - Label specific elements: "This lighting" or "This color grade"
+    
+    **Deliverable:**
+    - Create a shared Pinterest board or Figma file
+    - Include 8-10 images minimum
+    - Add notes on each image explaining what resonates
+    - Share with client for approval before proceeding
+  </Tab>
+  <Tab value="Storyboarding">
+    **Storyboarding (Shot-by-shot sequence)**
+    
+    Provides a sequential map of every planned shot. Use:
+    - Rough sketches (stick figures OK!)
+    - Numbered sequence (Shot 1, Shot 2, etc.)
+    - Camera direction (Wide, Medium, Close-up)
+    - Brief description of action
+    
+    **Format:**
+    - Digital (Figma, Adobe XD) or physical (paper thumbnails)
+    - One shot per panel
+    - Include: Shot number, shot type, duration, brief description
+    - Minimum 8 shots for any project
+  </Tab>
+</Tabs>
+
+**📋 Pre-Production Deliverables Checklist:**
+- [ ] Logline approved by client
+- [ ] Moodboard shared and signed off
+- [ ] Storyboard with shot descriptions (minimum 8 shots)
+- [ ] All creative assets in shared folder
+- [ ] Client feedback incorporated
+
+---
+
+### Logistics and Planning
+
+Technical planning involves a methodical walkthrough of the physical space and coordination of all personnel.
+
+**Venue Scout Walkthrough:**
+During the scout, the lead walks through the location with a checklist and **takes photos/video at each camera position**. Mark:
+- Primary camera position (wide establish shot)
+- Secondary angles (medium, close-up, profile)
+- Audio recording locations (where is ambient noise loudest/quietest?)
+- Talent traffic flow (where will actors stand, walk, sit?)
+- Power outlet locations and circuit capacity
+- Cable run paths (avoid tripping hazards)
+
+**Parallel: Talent Sourcing**
+- Confirm on-camera talent availability 2 weeks prior
+- Provide wardrobe brief: "Earth tones, layers, movement-friendly"
+- Send call time and location (with parking details)
+- Confirm contact phone numbers day-before
+
+---
+
+### Equipment Manifest
+
+The final output of logistics is the **Equipment Manifest**, an itemized checklist of every component required for the shoot. Every item must be accounted for.
+
+**Sample Equipment Manifest Format:**
+
+| Category | Item | Qty | Spec | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **Camera** | RED Komodo | 1 | 6K RAW | Primary A-camera |
+| **Lens** | Canon EF 24-70mm | 2 | f/2.8 L | A + B cam |
+| **Audio** | Rode Wireless Go II | 3 | 2.4 GHz | Talent + boom |
+| **Power** | V-Mount Battery | 6 | 7200mAh | 8hr shoot = 4 needed |
+| **Storage** | CFast Card | 8 | 128GB | 6K RAW eats ~50GB/hr |
+
+✅ **Best Practice:** Create manifest 2 weeks before shoot. Order any rentals immediately. Check every item 48 hours prior (test batteries, verify lenses focus smoothly).
+
+---
+
+### 🟢 Pre-Production FAQ
+
+<Accordions>
+  <Accordion title="Why do we need a moodboard if the client already gave us a reference video?">
+    A reference video shows what someone *else* did; a moodboard shows what *we* will do. It translates the client's vague "vibe" into specific, measurable targets our team can hit during the shoot (e.g., "Key light at 45°, warm color grade, shallow DOF").
+  </Accordion>
+  <Accordion title="Is a venue scout necessary for a location we have used before?">
+    **Yes.** Facilities change—power outlets may be broken, new furniture may obstruct previous angles, or the client may have modified the space. Always verify 24–48 hours prior.
+  </Accordion>
+  <Accordion title="What if the client rejects the storyboard?">
+    Document their feedback. Revise and resubmit. This is the cheapest time to make changes; changes on-set cost time and crew morale.
+  </Accordion>
+</Accordions>
+
+---
+
+## 1.3 On-Site: The Shoot
+
+The on-site phase is characterized by strict adherence to the schedule and the physical safety of the crew and equipment.
+
+### Production Documentation
+
+Two documents govern the shoot: the **Callsheet** and the **Shotlist**. Both must be printed and distributed to crew 24 hours before the shoot.
+
+<Tabs items={['Callsheet', 'Shotlist']}>
+  <Tab value="Callsheet">
+    **Callsheet (Logistics Heart):**
+    
+    ```
+    PRODUCTION: "iTamaraws Winter Campaign"
+    SHOOT DATE: March 15, 2024
+    CALL TIME: 6:00 AM (Crew) | 7:00 AM (Talent)
+    LOCATION: Rizal Park, Manila
+      Address: Padre Burgos Ave, Ermita, Manila
+      GPS: 14.5739° N, 120.9780° E
+      Parking: North Gate lot (mention to crew)
+
+    WEATHER: Partly cloudy, 28°C, 65% humidity
+    CREW: 8 total (see attached roster)
+    TALENT: Sarah Chen (talent brief attached)
+
+    EMERGENCY CONTACTS:
+      Location Manager: +63 917 123 4567
+      Medical: Makati Medical Center (5 min away)
+      Client SPOC: Juan Dela Cruz (+63 917 987 6543)
+
+    EQUIPMENT: 2 cameras, 5 lenses, wireless audio, 4 lights
+    EXPECTED WRAP: 5:00 PM
+    ```
+  </Tab>
+  <Tab value="Shotlist">
+    **Shotlist (Operational Heart):**
+    
+    Numbered list of every "non-negotiable" shot required by the client.
+
+    | # | Shot | Description | Duration | Priority |
+    | :--- | :--- | :--- | :--- | :--- |
+    | 1 | Establish Wide | Talent walks into frame, smiles to camera | 8-10 sec | 🔴 Must Have |
+    | 2 | Medium Close | Talent speaks to camera, explains product | 15-20 sec | 🔴 Must Have |
+    | 3 | Product Detail | 4K macro of product being handled | 10-15 sec | 🔴 Must Have |
+    | 4 | B-Roll: Walking | Talent walks through environment | 15-20 sec | 🟡 Nice to Have |
+    | 5 | Interview Insert | Talent answers Q&A (3-5 questions) | 30-45 sec | 🟢 Bonus |
+  </Tab>
+</Tabs>
+
+---
+
+### The Production Timeline (Run-of-Show)
+
+To maintain order, the team follows a standard Run-of-Show. This workflow ensures technical foundations are laid before creative talent arrives.
+
+| Time | Phase | Activity | Lead | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| 6:00 AM | **Load-In** | Equipment arrives, inventory check, staging | Gear Tech | Safety first—test all gear |
+| 6:45 AM | **Tech Setup** | Power runs, cable routing, camera rigs | Tech Lead | Run signal test (no talent yet) |
+| 7:00 AM | **Talent Arrival** | Greet talent, mic fitting, hair/makeup final | AD | Keep talent comfortable |
+| 7:30 AM | **Rehearsal** | Walk-through blocking, camera framing | Director | Nail the blocking now |
+| 8:00 AM | **Rolling** | Record takes 1-5 for Shot #1, then move on | Ops Lead | Prioritize shotlist order |
+| 10:30 AM | **Break** | 30 min meal break (crew + talent) | Craft Services | Keep energy up |
+| 11:00 AM | **Resume** | Shots #4-7 (B-roll and bonus content) | Ops Lead | Flexibility here if behind |
+| 1:00 PM | **Lunch** | 1 hour (staggered if possible) | Craft Services | |
+| 2:00 PM | **Final Shots** | Any pick-ups or reshoots | Director | Prioritize missing priorities |
+| 4:30 PM | **Strike** | Systematic teardown, gear logging | Gear Tech | Every cable accounted for |
+| 5:30 PM | **Wrap** | Final site walkthrough, talent release | AD | Thank everyone |
+
+---
+
+### Crew Management
+
+Between technical phases, the lead must actively manage **Rest and Meal Breaks**. Production efficiency drops significantly after five hours of continuous labor; scheduling breaks is a technical necessity to prevent mistakes.
+
+<Tabs items={['Welfare Standards', 'Break Schedule Example', 'Catering Guide']}>
+  <Tab value="Welfare Standards">
+    **Crew Welfare Standards:**
+    - No more than 5 consecutive hours of work without a break
+    - Provide snacks every 2 hours (water, fruit, granola bars)
+    - Lunch break minimum 30–60 minutes (preferably staggered)
+    - Shade/shelter during breaks
+    - Clear expectations on wrap time (don't surprise crew with 2-hour overtimes)
+    - Communicate schedule changes immediately
+    - Never ask crew to work through a planned break without discussion
+  </Tab>
+  <Tab value="Break Schedule Example">
+    **Sample 10-Hour Shoot Schedule:**
+    
+    - **6:00 AM** Load-In (30 min)
+    - **6:30 AM** Tech Setup
+    - **9:00 AM** **First Break** (15 min snack)
+    - **9:15 AM** Resume shooting
+    - **12:00 PM** **Lunch Break** (60 min)
+    - **1:00 PM** Resume shooting
+    - **3:00 PM** **Afternoon Break** (15 min snack)
+    - **3:15 PM** Resume shooting
+    - **4:30 PM** Strike begins (crew gets paid rest)
+    - **5:30 PM** Wrap
+  </Tab>
+  <Tab value="Catering Guide">
+    **Craft Services Recommendations:**
+    
+    **Morning (Arrival):**
+    - Water stations (essential)
+    - Coffee/tea
+    - Light pastries or granola bars
+    
+    **Lunch (Staggered):**
+    - Hot and cold options
+    - Vegetarian choices
+    - Hydration (water + electrolytes)
+    - Budget: $15–25 per person
+    
+    **Afternoon Snack:**
+    - Fresh fruit
+    - Nuts or protein bars
+    - Cold water is critical in heat
+    
+    **Budget Estimate:** $150–250 for crew of 8, full day
+  </Tab>
+</Tabs>
+
+---
+
+### 🟢 On-Site FAQ
+
+<Accordions>
+  <Accordion title="What is the priority if we are running behind schedule?">
+    Refer to the "Priority" column in the Shotlist. Drop everything marked 🟢 Bonus, then 🟡 Nice to Have. Focus 100% on 🔴 Must Have shots. If you complete those, you've delivered.
+  </Accordion>
+  <Accordion title="Who is responsible for gear safety on-site?">
+    Every crew member is responsible for their immediate station (don't leave cameras unattended). The Lead is responsible for the final "Litter Sweep" and inventory check during Strike phase.
+  </Accordion>
+  <Accordion title="Can we keep shooting if the talent is exhausted?">
+    No. Tired talent = sloppy performance. Take a break. A 15-minute rest often yields better takes than pushing through.
+  </Accordion>
+</Accordions>
+
+---
+
+## 1.4 Post-Production and Publication
+
+Post-production focuses on data integrity and the final departmental "handshake" that brings the content to the audience.
+
+### File Organization and Ingest
+
+The workflow begins with **Data Ingest**. Footage must be moved to a master drive with an immediate secondary backup.
+
+<Tabs items={['Naming Convention', 'Folder Structure', 'Backup Protocol']}>
+  <Tab value="Naming Convention">
+    **Standard File Naming Convention:**
+    ```
+    YYYYMMDD_ProjectName_ClipDescription_V01
+    Example: 20240315_iTamaraws_TalentWalkIn_V01.mov
+    ```
+    
+    **Rules:**
+    - **Date:** Always YYYYMMDD format (sortable)
+    - **Project Name:** No spaces, use CamelCase or underscores
+    - **Description:** Brief, descriptive (not "Footage_01" but "TalentWalkIn" or "ProductShot")
+    - **Version:** V01, V02, etc. if there are re-exports
+    - **File Type:** Match the actual format (.mov, .mp4, .wav, etc.)
+    
+    **Bad Examples:**
+    - "footage.mov"
+    - "take_5_final_FINAL_FINAL.mov"
+    - "Video from March"
+    
+    **Good Examples:**
+    - "20240315_iTamaraws_EstablishShot_V01.mov"
+    - "20240315_iTamaraws_DialogueA_V02.mov"
+    - "20240315_iTamaraws_BRoll_Exterior_V01.mov"
+  </Tab>
+  <Tab value="Folder Structure">
+    **Folder Structure (Sacred):**
+    ```
+    20240315_iTamaraws_Campaign/
+    ├── 01_RAW/
+    │   ├── Camera_A/
+    │   ├── Camera_B/
+    │   └── Audio_Stems/
+    ├── 02_AUDIO/
+    │   ├── Dialogue/
+    │   ├── SFX/
+    │   └── Music/
+    ├── 03_ASSETS/
+    │   ├── Graphics/
+    │   ├── Logos/
+    │   └── Stills/
+    ├── 04_PROJECT_FILES/
+    │   ├── DaVinci/
+    │   └── Premiere/
+    └── 05_EXPORTS/
+        ├── Master_4K/
+        ├── Web_1080p/
+        └── Social_9_16/
+    ```
+    
+    **Rule:** Any new editor must understand the project structure within 30 seconds of opening the folder.
+  </Tab>
+  <Tab value="Backup Protocol">
+    **Critical: 3-2-1 Backup Rule**
+    
+    - **3** copies of data (original + 2 backups)
+    - **2** different storage types (SSD + external HDD)
+    - **1** offsite backup (cloud or secondary location)
+    
+    **Implementation:**
+    1. Copy footage to Master Drive (USB 3.0 external SSD) — same day
+    2. Immediately copy to Secondary Backup (another external HDD) — same day
+    3. Upload critical assets to cloud (Google Drive, Dropbox) within 48 hours
+    4. Verify all backups by spot-checking files — same week
+    
+    **Never:**
+    - Keep raw footage on a single hard drive
+    - Leave footage on camera SD cards after offloading
+    - Assume a cloud backup replaces local redundancy
+    - Store backups in the same location as the original
+  </Tab>
+</Tabs>
+
+---
+
+### The Editing Workflow
+
+Editing proceeds in two major stages, each with specific criteria for "lock."
+
+<Accordions>
+  <Accordion title="Stage 1: Assembly Cut (Story Focus)">
+    - **Goal:** Establish narrative flow and pacing
+    - **Deliverable:** 90% complete rough edit with all footage
+    - **Client involvement:** Reviews and approves story direction
+    - **Typical duration:** 3–5 business days
+    - **Success metric:** "Does the story make sense?"
+    - **Typical feedback:** Plot structure, pacing, shot selection
+    - **Do not include yet:** Color grading, sound design, graphics
+  </Accordion>
+  <Accordion title="Stage 2: Fine Cut (Polish Focus)">
+    - **Goal:** Color grading, sound design, graphics integration
+    - **Deliverable:** Final, publication-ready master
+    - **Client involvement:** Locked after client final approval
+    - **Typical duration:** 5–10 business days
+    - **Success metric:** "Is every frame broadcast-quality?"
+    - **Typical feedback:** Color tone, music placement, graphic timing
+    - **Include:** All color grades, sound mix, motion graphics, transitions
+  </Accordion>
+  <Accordion title="Client Feedback Process">
+    - **All feedback logged** in shared Google Doc
+    - **Use timestamped comments** (e.g., "0:15 - Color is too blue, should be warmer")
+    - **Editor responds** with solution or clarifying questions
+    - **Limit revision rounds** to 2–3 per stage (more = scope creep)
+    - **Track turnaround time:** Aim for 48-hour editor responses
+    - **Freeze feature:** Once approved, no new feedback accepted
+  </Accordion>
+</Accordions>
+
+---
+
+### The Publication Handshake
+
+Once the edit is finalized, Production facilitates handover to the Publications Department. This is not a hand-off—it's a **collaborative handshake**.
+
+<Tabs items={['Handover Package', 'Technical Briefing', 'Caption Verification']}>
+  <Tab value="Handover Package">
+    **The Handover Package includes:**
+    
+    1. **High-Quality Master** (4K, ProRes, uncompressed audio)
+       - Upload to shared drive
+       - File size: typically 30–100 GB
+       - Keep in secure, backed-up location
+    
+    2. **Social Cut-downs** (16:9 → 9:16 vertical for Instagram/TikTok)
+       - Separate file optimized for mobile
+       - Include safe zones (avoid overlays in edges)
+       - Compressed for web (H.264, ~50 MB for 1 min video)
+    
+    3. **Technical Briefing Doc** 
+       - See "Technical Briefing" tab
+    
+    4. **Caption/Subtitle File** (SRT format)
+       - Machine-readable subtitle file
+       - For accessibility and international reach
+       - Include English + local language options
+  </Tab>
+  <Tab value="Technical Briefing">
+    **Technical Briefing Template:**
+    ```
+    PROJECT: iTamaraws Winter Campaign
+    DELIVERY DATE: March 20, 2024
+    EDITOR: [Name]
+
+    TALENT NAMES (spellings to use):
+    - Sarah Chen (not Sara, not Shaw)
+    - Dr. Juan Dela Cruz (include title)
+
+    LEGAL/TECHNICAL WARNINGS:
+    - Contains rapid cuts (potential epilepsy trigger) - flag in caption
+    - Music licensed until Dec 31, 2024 - refresh after that date
+    - B-roll from Unsplash (free, no attribution required)
+
+    COLOR SPACE: Rec. 709
+    AUDIO: 5.1 Surround (also includes stereo mixdown)
+    SUBTITLES: English + Filipino (both included in Master)
+
+    NOTES:
+    - Master file is 45 GB - allow 30 min for download
+    - Social cut-downs are optimized for mobile (safe zone respected)
+    - All graphics are motion graphics (no static text that might be unreadable on mobile)
+    ```
+  </Tab>
+  <Tab value="Caption Verification">
+    **The Caption Verification Process:**
+
+    | Role | Task |
+    | :--- | :--- |
+    | **Publications** | Drafts the "Hook" (opening line that makes people click) |
+    | **Production** | Verifies technical accuracy (product names, dates, links are correct) |
+    | **Client SPOC** | Approves final caption before posting |
+
+    **Best Practices:**
+    - Hook should be 1–2 sentences, punchy
+    - Include relevant hashtags (production provides suggestions)
+    - Test links before publishing
+    - Schedule post during peak engagement hours
+  </Tab>
+</Tabs>
+
+---
+
+### 🟢 Post-Production FAQ
+
+<Accordions>
+  <Accordion title="Why can't Production just post the video directly?">
+    Publications specializes in audience engagement, SEO, and platform algorithms. Production ensures the asset is technically perfect; Publications ensures it is *seen*. Different expertise, same goal.
+  </Accordion>
+  <Accordion title="How many rounds of revisions are included in the project scope?">
+    Standard: 2 rounds per stage (Assembly + Fine Cut = 4 total). Additional rounds are change orders.
+  </Accordion>
+  <Accordion title="How long should we keep raw footage after a project is published?">
+    **Raw footage:** 30 days post-publication, then archive to cold storage.
+    **Master export:** Archive indefinitely (you never know when a client wants a re-edit).
+    **Project files:** Keep for 1 year, then archive (space/server costs).
+  </Accordion>
+</Accordions>
+
+---
+
+## Summary: The Production Pipeline Mindset
+
+**Pre-Pre** = Filter (Is this viable?)
+**Pre-Prod** = Blueprint (What are we making?)
+**On-Site** = Execute (Make it happen)
+**Post-Prod** = Refine (Make it perfect)
+**Publication** = Release (Let the world see it)
+
+Each phase has **decision gates**. You cannot move forward without sign-off from the previous phase. This structure prevents the chaos of reactive filmmaking and enables the department to scale.
+
+---
+
+## Key Principles
+
+1. **Document everything.** A thought in someone's head is worthless; a thought in a shared doc is a guideline.
+2. **Standardize processes.** Different crews should produce consistent output.
+3. **Plan obsessively.** The more you plan, the less you improvise on-set, the less you re-shoot in post.
+4. **Communicate like a production.** Use call sheets, shot lists, and run-of-shows. Formality saves time.
+5. **Safety first, always.** Crew health > creative vision. Always.

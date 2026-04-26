@@ -1,0 +1,99 @@
+# Section 3: Set Design and Fabrication
+
+This section governs the physical environment of our productions. Our fabrication philosophy is **Student-First** and **Environmentally Conscious**, prioritizing accessible skill-building, lightweight logistics, and the creative reuse of materials.
+
+---
+
+## 3.1 Pre-Phase: Design and Budget
+
+The pre-phase is a cyclical process of aligning creative ambition with financial and physical reality. No fabrication begins until the design is approved and the budget is finalized.
+
+### Initial Brief and Creative Concept
+The process starts with the **Client Brief**, where the desired "look" is established. The design team then creates **Sketches** and **Digital Renders** to visualize lighting, textures, and depth.
+* **Student-First Design:** Renders should be achievable with basic hand tools. Avoid complex joinery that requires specialized industrial machinery.
+* **Camera Testing:** Renders must account for camera angles (e.g., ensuring the backdrop is wide enough to cover a Medium-Wide shot).
+
+### The Approval and Revision Loop
+Set design is rarely approved on the first draft. The team must navigate a specific revision cycle:
+1. **Initial Rendering:** Present the digital mockup and estimated costs.
+2. **Review:** Client provides feedback on aesthetics or budget constraints.
+3. **Revision:** Adjust materials or design complexity to meet constraints.
+4. **Final Sign-off:** No materials are purchased until the "Final Render" and "Cost Sheet" are signed.
+
+---
+
+## 3.2 Fabrication: The Build
+
+Fabrication is the transition from digital pixels to physical matter. In our organization, we view the build as a learning opportunity for officers to gain practical engineering skills.
+
+### Sustainable Building Ideology
+We prioritize the **Circular Economy** in our fabrication process. Instead of buying new for every event, we focus on:
+* **Recycled Materials:** Utilizing reclaimed wood pallets, cardboard for mockups, and repurposing plastic scraps for diffusers.
+* **Modular "LEGO" Systems:** Building frames in standard sizes (e.g., 4ft x 8ft flats) that can be reconfigured and repainted for multiple years.
+* **Low-Impact Finishes:** Favoring water-based paints and mechanical fasteners (screws/bolts) over permanent adhesives to allow for easy disassembly and recycling.
+
+### Blueprinting and Assembly Guides
+Digital renders are not blueprints. The fabrication lead must create detailed **Technical Drawings** showing exact dimensions.
+* **Joinery:** Specify "Dry-Fit" methods first. Use bolts and wingnuts where possible so students can assemble and disassemble the set without power tools on-site.
+* **Cable Paths:** Blueprints must include "hidden" channels for power and signal cables so they do not clutter the set on-camera.
+
+---
+
+## 3.3 Setup and Strike
+
+The final phase involves the logistics of moving the set into the venue and properly decommissioning it after the event.
+
+### Installation and Cable Management
+On-site setup is where the "Set" and "Technicals" meet. 
+* **Placement:** Position the set according to the venue scout notes. 
+* **Cable Hiding:** Use gaff tape and "beauty panels" to hide all wiring. On camera, no loose cables should be visible.
+* **The Camera Test:** View the set through the actual production cameras to check for "hot spots" (reflections) or shadows that need adjustment.
+
+### Strike and Storage
+A set is an investment of both money and carbon. The **Strike Phase** must be as systematic as the build.
+* **"Deconstruction, Not Destruction":** Carefully remove screws and save them in labeled bins. Avoid "smashing" sets, as it ruins the material for future student projects.
+* **Designated Storage:** Large set pieces must be labeled and stored in a dry environment to prevent warping.
+
+---
+
+### 🟢 Fabrication FAQ
+> **What is the best "lightweight" material for backdrops?**
+> **Coroplast (Corrugated Plastic)** is highly recommended. It is light enough for one student to carry, waterproof, and can be easily recycled after use.
+>
+> **How do we handle set pieces that are too heavy for the crew to move?**
+> This is a design failure. All set pieces should be "Man-Portable" (movable by 2 students) or built on heavy-duty casters with locks.
+
+---
+
+## Appendix: Master Directory and Resource Guide
+
+This directory serves as the final reference for locating physical tools, digital assets, and organizational contacts.
+
+### A.1 Physical Inventory Directory
+| Category | Storage Location | Key Items |
+| :--- | :--- | :--- |
+| **Field Gear** | Storage Room A, Bin 1-4 | Cameras, Lenses, SD Cards, ND Filters. |
+| **Audio Bin** | Storage Room A, Bin 5 | XLR Cables, Wireless Mics, Audio Interface. |
+| **Live Rack** | Control Room (Station 1) | Encoders, Switchers, Capture Cards. |
+| **Fab Tools** | Workshop Locker | Drill, Level, Measuring Tape, Safety PPE. |
+
+### A.2 Digital Asset Directory
+| Asset Type | Hosting Platform | Access Path |
+| :--- | :--- | :--- |
+| **Project Archives** | Organizational NAS / Drive | `/Archives/YYYY/Project_Name` |
+| **Active Overlays** | Local Stream PC | `C:/Stream_Assets/Graphics/Current_Season` |
+| **Stingers/Alpha** | Local Stream PC | `C:/Stream_Assets/Transitions` |
+| **BGM Library** | Shared Folder | `/Assets/Audio/RoyaltyFree_BGM` |
+
+### A.3 Officer and Department Directory
+| Role | Responsibility | Point of Contact |
+| :--- | :--- | :--- |
+| **Production Lead** | Final Project Approval | [Internal Contact List] |
+| **Technical Director** | Stream & Signal Integrity | [Technical Dept Discord] |
+| **Publications Lead** | Content Distribution/Captions | [Publications Dept Channel] |
+| **Logistics Officer** | Equipment Sign-out & Booking | [Inventory Management App] |
+
+### A.4 Recommended Vendor & Sustainable Sourcing
+* **Hardware:** [Preferred Tech Vendor Name]
+* **Sustainable Raw Materials:** [Local Reclaimed Wood/Plastic Provider]
+* **Consumables (Gaff Tape/Batteries):** [Preferred Bulk Supplier]
