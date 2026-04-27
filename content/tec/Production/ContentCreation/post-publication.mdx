@@ -1,0 +1,262 @@
+---
+title: Post-Production & Publication
+description: Data ingest, file naming, folder structure, the 3-2-1 backup rule, the editing workflow, and the publication handshake with the Publications Department.
+icon: Scissors
+---
+
+# Phase 4 — Post-Production & Publication
+
+Post-production focuses on **data integrity**, narrative refinement, and the final departmental handshake that brings the content to the audience. The quality of this phase is directly determined by how well the previous phases were executed.
+
+<Callout type="warn" title="Data Ingest Is Day-One">
+  The moment a shoot wraps, **data ingest begins**. Raw footage on a single camera card is one corrupted write away from total loss. Ingest and backup happen the same day as the shoot — not the next day.
+</Callout>
+
+---
+
+## File Organization and Ingest
+
+### Naming Convention
+
+Every file must follow the standard naming convention so any editor can understand the project's history without asking.
+
+**Format:**
+```
+YYYYMMDD_ProjectName_ClipDescription_V01.ext
+```
+
+**Examples:**
+```
+20240315_TEC_EstablishShot_V01.mov
+20240315_TEC_DialogueA_V02.mov
+20240315_TEC_BRoll_Exterior_V01.mov
+```
+
+| ❌ Never | ✅ Always |
+| :--- | :--- |
+| `footage.mov` | `20240315_TEC_OpeningShot_V01.mov` |
+| `take_5_final_FINAL_FINAL.mov` | `20240315_TEC_TalentInterview_V03.mov` |
+| `Video from March` | `20240315_TEC_BRoll_Crowd_V01.mov` |
+
+**Rules:** Date always `YYYYMMDD` (sortable). Project name uses CamelCase or underscores — no spaces. Description is specific: "TalentWalkIn", not "Footage_01". Version increments on every re-export.
+
+---
+
+### Folder Structure
+
+The folder structure is **sacred**. Any new editor must understand the project within 30 seconds of opening the folder. Deviating is not permitted.
+
+```
+YYYYMMDD_ProjectName/
+├── 01_RAW/
+│   ├── Camera_A/
+│   ├── Camera_B/
+│   └── Audio_Stems/
+├── 02_AUDIO/
+│   ├── Dialogue/
+│   ├── SFX/
+│   └── Music/
+├── 03_ASSETS/
+│   ├── Graphics/
+│   ├── Logos/
+│   └── Stills/
+├── 04_PROJECT_FILES/
+│   ├── DaVinci/
+│   └── Premiere/
+└── 05_EXPORTS/
+    ├── Master_4K/
+    ├── Web_1080p/
+    └── Social_9_16/
+```
+
+<Callout type="info" title="Folder Discipline">
+  Never save a project file to the desktop or a personal drive. All project data lives in this structure on the shared Production drive. If it's not in the folder structure, it doesn't exist for the team.
+</Callout>
+
+---
+
+### The 3-2-1 Backup Rule
+
+<Steps>
+  <step>
+  ### 3 copies of data
+  Keep the original plus two separate backups.
+  </step>
+  <step>
+  ### 2 different storage types
+  For example, an SSD and an external HDD. Two copies on the same media type doesn't protect against device failure.
+  </step>
+  <step>
+  ### 1 offsite backup
+  Cloud storage (Google Drive, Dropbox) or a drive kept in a separate physical location.
+  </step>
+</Steps>
+
+| Action | Deadline |
+| :--- | :--- |
+| Copy footage to Master Drive (SSD) | Same day as shoot |
+| Copy to Secondary Backup (HDD) | Same day as shoot |
+| Upload critical assets to cloud | Within 48 hours |
+| Spot-check all backups to verify integrity | Within 1 week |
+
+**Absolute Rules:**
+- Never keep raw footage on a single drive
+- Never leave footage on camera cards after offloading — clear cards for reuse
+- Never assume cloud backup replaces local redundancy
+- Never store all backups in the same physical location
+
+---
+
+## The Editing Workflow
+
+Editing proceeds in two locked stages. Neither begins until the previous stage has formal client sign-off.
+
+<Accordions>
+  <Accordion title="Stage 1 — Assembly Cut (Story Focus)">
+    **Goal:** Establish narrative flow and pacing. Does the story make sense?
+
+    | Property | Detail |
+    | :--- | :--- |
+    | **Deliverable** | 90% complete rough edit with all footage laid in |
+    | **Client Role** | Reviews and approves story direction |
+    | **Typical Duration** | 3–5 business days |
+    | **Success Metric** | "Does the story communicate the intended message?" |
+    | **Expected Feedback** | Plot structure, pacing, shot selection, sequence order |
+    | **Do NOT include yet** | Color grading, sound design, motion graphics, final transitions |
+
+    Clients often want structural changes at this stage. Spending time on polish before structure is locked is wasted effort — lock story first.
+  </Accordion>
+  <Accordion title="Stage 2 — Fine Cut (Polish Focus)">
+    **Goal:** Color grading, sound design, motion graphics. Is every frame broadcast-quality?
+
+    | Property | Detail |
+    | :--- | :--- |
+    | **Deliverable** | Final, publication-ready master |
+    | **Client Role** | Locked after client final approval |
+    | **Typical Duration** | 5–10 business days |
+    | **Success Metric** | "Is every frame broadcast-quality?" |
+    | **Expected Feedback** | Color tone, music placement, graphic timing |
+    | **Include** | All color grades, sound mix, motion graphics, subtitles |
+
+    Once the Fine Cut is client-approved, it is **locked**. No new feedback is accepted. Changes become a new Change Order.
+  </Accordion>
+  <Accordion title="Client Feedback Process">
+    - All feedback logged in a shared Google Doc — not chat messages or verbal notes
+    - Feedback uses timestamps: `"0:15 — Color is too cool, needs warmth"`
+    - Editor responds to each note with a solution or clarifying question
+    - Limit revision rounds to **2 per stage** (Assembly + Fine Cut = 4 total maximum)
+    - Additional rounds are Change Orders
+    - Once a stage is approved, the feedback window is **closed**
+
+    **Turnaround SLA:** Editors target 48-hour response to all client feedback rounds.
+  </Accordion>
+</Accordions>
+
+---
+
+## The Publication Handshake
+
+Once the edit is finalized, Production facilitates a structured handover to the **Publications Department**. This is not a file drop — both departments have specific actions to complete.
+
+<Tabs items={['Handover Package', 'Technical Briefing', 'Caption Verification']}>
+  <Tab value="Handover Package">
+    **The Handover Package includes:**
+
+    **1. High-Quality Master**
+    - Format: 4K, ProRes or equivalent, uncompressed audio
+    - Uploaded to shared drive — do not send via chat
+    - Remains in a secure, backed-up location indefinitely
+
+    **2. Social Cut-Downs**
+    - 16:9 → 9:16 vertical for Instagram Reels / TikTok
+    - Compressed for web: H.264, target ~50 MB per minute
+    - Safe zones respected — no important content within 10% of frame edges
+    - Exported separately — do not ask Publications to crop the master
+
+    **3. Technical Briefing Document** (see next tab)
+
+    **4. Caption / Subtitle File**
+    - SRT format, machine-readable
+    - English subtitles always included
+    - Filipino subtitles included when content targets a local audience
+  </Tab>
+  <Tab value="Technical Briefing">
+    **Technical Briefing Template:**
+
+    ```
+    PROJECT: [Project name]
+    DELIVERY DATE: [Date]
+    EDITOR: [Name]
+    PRODUCTION LEAD: [Name]
+
+    TALENT NAMES (exact spellings for captions/credits):
+    - [Full name as it should appear in captions]
+    - [Include titles if applicable, e.g., "Dr.", "Engr."]
+
+    LEGAL / TECHNICAL NOTES:
+    - [Rapid cuts — epilepsy warning if applicable]
+    - [Music licensing expiry date]
+    - [Any third-party assets requiring attribution]
+    - [Shots with restricted use]
+
+    TECHNICAL SPECS:
+    Color Space: [Rec. 709 / P3 / etc.]
+    Audio: [Stereo / 5.1 — note if stereo mixdown is included]
+    Subtitles: [Languages included]
+    Master File Size: [Approximate]
+
+    NOTES:
+    - [Anything Publications needs before posting]
+    - [Platform-specific recommendations if known]
+    ```
+  </Tab>
+  <Tab value="Caption Verification">
+    **Three-Role Sign-Off Before Any Post Goes Live:**
+
+    | Role | Responsibility |
+    | :--- | :--- |
+    | **Publications** | Drafts the hook — the opening line that drives engagement |
+    | **Production** | Verifies technical accuracy: names, dates, links, no misleading claims |
+    | **Client SPOC** | Final approval — no post goes live without this |
+
+    **Best Practices:**
+    - Hook: 1–2 sentences, punchy, no filler
+    - Test every link before submitting for sign-off
+    - Coordinate posting time with client SPOC — publish during peak engagement windows
+  </Tab>
+</Tabs>
+
+---
+
+## Archive and Retention
+
+| Asset Type | Retention Period | Action After |
+| :--- | :--- | :--- |
+| **Raw Footage** | 30 days post-publication | Archive to cold storage |
+| **Master Export** | Indefinitely | Remains in Production archive |
+| **Project Files** | 1 year | Archive |
+| **Social Cut-Downs** | 6 months | Archive or delete |
+| **Technical Briefing** | Indefinitely | Kept with Master export |
+
+<Callout type="info" title="Why Keep the Master?">
+  Clients regularly return months or years later requesting re-edits, clips, or format conversions. The Master export is the source of truth. Losing it means potentially recreating the entire edit from raw footage — if that footage even still exists.
+</Callout>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="Why can't Production just post the video directly?">
+    Publications specializes in audience engagement, platform algorithms, and caption strategy. Production ensures the asset is technically broadcast-quality. Publications ensures it is seen by the right people at the right time. These are different skill sets with the same goal.
+  </Accordion>
+  <Accordion title="How many revision rounds are in the standard scope?">
+    Two rounds per stage: Assembly Cut (2 rounds) + Fine Cut (2 rounds) = 4 total. Any additional rounds are processed as Change Orders with updated scope documentation.
+  </Accordion>
+  <Accordion title="Can the editor start the Fine Cut before the Assembly Cut is approved?">
+    No. If the client changes story structure after seeing color-graded, motion-graphics-polished footage, all that polish must be redone. Lock stages in order — always.
+  </Accordion>
+  <Accordion title="What if Publications wants to make cuts to the video after handover?">
+    All requests to alter the video after the Fine Cut is locked go back to Production as a formal Change Order. Publications does not edit Production assets without Production involvement.
+  </Accordion>
+</Accordions>

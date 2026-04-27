@@ -4,6 +4,7 @@ import { OfficerCarousel } from "@/components/officer-carousel";
 import { Mermaid } from '@/components/mdx/mermaid';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 // 2. Change 'Promise<MDXComponents>' to just 'MDXComponents'
 export function getMDXComponents(
@@ -17,6 +18,8 @@ export function getMDXComponents(
     Accordions,
     Tab,
     Tabs,
+    Steps,
+    Step,
     ...base,
     ...(orgId
       ? {

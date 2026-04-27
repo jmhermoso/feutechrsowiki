@@ -1,9 +1,7 @@
 {
+  "title": "Technicals",
+  "icon": "Settings",
   "pages": [
-    "Presentations",
-    "Audio",
-    "Livestreaming",
-    "Composition",
-    "Redundancy"
+
   ]
 }

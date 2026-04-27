@@ -1,21 +1,68 @@
 ---
 title: Content Creation
-description: Live broadcast and technical execution.
+description: The end-to-end operational manual for TEC Production's content creation pipeline — from discovery to publication.
+icon: Film
 ---
 
-# Production Department
+# Content Creation
 
-**Head Director:** [Name]
+This section is the operational manual for TEC Production's creative pipeline. It moves from high-level discovery to the granular details of technical handover. By following this architecture, the department maintains a standardized quality of output regardless of which officer is leading the project.
 
-The Production department handles the "magic" behind the screen—responsible for live streams, stage technicals, and broadcast quality.
+<Callout type="warn" title="Phase Gate Policy">
+  A project **cannot advance** to the next phase until all deliverables from the current phase are signed off. Skipping gates is the leading cause of on-set chaos and post-production rework.
+</Callout>
 
-## Technicals
-**Head Leader:** [Name]
+---
 
-* **Equipment Management**: Inventory of cameras, mixers, and PCs.
-* **Stream Layouts**: Coordinating with Creatives for overlays.
-* **Broadcasting**: Managing OBS/vMix during live tournaments.
+## The Production Pipeline
 
-## Obligations
-* Ensuring zero downtime during live broadcasts.
-* Setting up physical stage lighting and audio for on-ground events.
+<Mermaid chart={`
+graph LR
+    A["🔍 Pre-Pre<br/>Discovery"] --> B["📋 Pre-Prod<br/>Blueprint"]
+    B --> C["🎬 On-Site<br/>Shoot"]
+    C --> D["✂️ Post-Prod<br/>Edit & Publish"]
+
+    A1["Request → SPOC<br/>Scope → Feasibility"] -.->|Details| A
+    B1["Storyboard → Scout<br/>Equipment Manifest"] -.->|Details| B
+    C1["Callsheet → Shotlist<br/>Run-of-Show"] -.->|Details| C
+    D1["Ingest → Edit<br/>Handshake"] -.->|Details| D
+`} />
+
+---
+
+## Pipeline Phases
+
+<Cards>
+  <Card
+    title="Phase 1 — Pre-Pre: Discovery"
+    description="Client intake, SPOC identification, scope definition, the Kill Switch policy, and feasibility audits. The filter that decides if a project is viable before any labor begins."
+    href="./ContentCreation/pre-pre"
+  />
+  <Card
+    title="Phase 2 — Pre-Production: Blueprint"
+    description="Storyboarding, moodboarding, venue scouting, talent coordination, and the equipment manifest. Converting ideas into an actionable technical plan."
+    href="./ContentCreation/pre-production"
+  />
+  <Card
+    title="Phase 3 — On-Site: The Shoot"
+    description="Callsheets, shotlists, the run-of-show, crew welfare standards, and on-site safety. Everything governing the day of production."
+    href="./ContentCreation/on-site"
+  />
+  <Card
+    title="Phase 4 — Post-Production & Publication"
+    description="Data ingest, file organization, the 3-2-1 backup rule, editing workflow stages, and the publication handshake with the Publications Department."
+    href="./ContentCreation/post-publication"
+  />
+</Cards>
+
+---
+
+## Pipeline at a Glance
+
+| Phase | Purpose | Core Question |
+| :--- | :--- | :--- |
+| **Pre-Pre** | Filter | Is this project viable? |
+| **Pre-Production** | Blueprint | What exactly are we making? |
+| **On-Site** | Execute | Are we capturing what we planned? |
+| **Post-Production** | Refine | Is every frame broadcast-quality? |
+| **Publication** | Release | Is it reaching the right audience? |

@@ -1,8 +1,10 @@
 {
+  "title": "Content Creation",
+  "icon": "Film",
   "pages": [
-    "PrePreProduction",
-    "PreProduction",
-    "OnsiteProduction",
-    "PostProduction"
+    "pre-pre",
+    "pre-production",
+    "on-site",
+    "post-publication"
   ]
 }
