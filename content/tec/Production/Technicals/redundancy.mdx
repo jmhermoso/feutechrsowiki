@@ -1,0 +1,97 @@
+---
+title: Redundancy and Failover
+description: Plan B protocols for internet failure, hardware crashes, the Go/No-Go pre-show checklist, and the Record Rule.
+icon: ShieldCheck
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+# Redundancy and Failover
+
+Every production will eventually encounter a failure. Network drops, hardware crashes, source dropouts — none of these are hypothetical risks, they are scheduled inevitabilities across enough events. The difference between a professional production and an amateur one is not whether failures happen, but how quickly and invisibly they are resolved.
+
+<Callout type="warn" title="Plan B is not optional">
+  If your only plan is for everything to work, you do not have a plan. Every role in the technical chain must know their failover procedure before the show starts — not during the failure.
+</Callout>
+
+## The Record Rule
+
+The Record Rule is the single most important redundancy protocol in the technical workflow.
+
+**Always record the stream locally to an SSD. Start recording before the stream goes live.**
+
+- Local recording continues even if the internet connection drops and the stream goes offline
+- If the stream fails entirely, the VOD can be uploaded immediately after the event — the content is not lost
+- The local recording is also the source for post-event highlight reels and clip requests
+- SSD only — mechanical hard drives are too slow for reliable simultaneous recording and streaming; they introduce dropped frames
+
+## Internet Failover
+
+<Tabs items={['Primary Connection', 'Secondary Hotspot', 'Bonding Router']}>
+  <Tab value="Primary Connection">
+    The primary internet connection must be a wired Cat6 Ethernet connection to a stable network. Confirm upload speed on the encoding PC before the event using a speed test tool (not a phone or separate device).
+
+    If the primary connection drops during a live broadcast:
+    1. **Switch to Technical Difficulties scene immediately** — do not troubleshoot while live on program output
+    2. Attempt to reconnect the stream from the encoder
+    3. If reconnection fails within 2 minutes, activate the secondary hotspot
+    4. Post a status update on org social channels — the audience is aware something has happened
+  </Tab>
+  <Tab value="Secondary Hotspot">
+    A dedicated mobile hotspot on a separate carrier from any venue Wi-Fi must be available at the encoding station at every event.
+
+    **Setup requirements:**
+    - Pre-configured on the encoding PC before the event — do not set up a new network connection during a live failure
+    - Different carrier from the venue's ISP where possible — a venue ISP outage should not affect the hotspot
+    - Dedicated device — do not use a personal phone as the primary hotspot; it may receive calls or run out of battery
+
+    **Reducing bitrate on hotspot:**
+    Mobile hotspot connections are less stable than wired connections. If failing over to the hotspot, immediately reduce stream bitrate from 1080p60 (6000–8000 kbps) to 720p60 (3500–4500 kbps) or lower. A stable lower-quality stream is better than a dropping high-quality one.
+  </Tab>
+  <Tab value="Bonding Router">
+    A bonding router combines multiple internet connections (e.g. Ethernet + hotspot) into a single, more stable output. The router manages failover automatically — if one connection drops, traffic routes through the remaining connection without interruption.
+
+    This is the recommended setup for high-stakes events where a stream interruption is unacceptable. Configure the bonding router before the event and test both connections independently before going live.
+  </Tab>
+</Tabs>
+
+## Hardware Failover
+
+| Failure | Immediate Action | Recovery |
+| :--- | :--- | :--- |
+| **Main encoding PC crash** | Switch to Technical Difficulties scene on secondary laptop | Reboot main PC; reconnect all sources; resume stream when stable |
+| **Source drops (camera, game capture)** | Cut that source from program output; fill with available source | Investigate the drop during the gap; reconnect and verify before restoring to program |
+| **Audio loss** | Switch to an emergency audio source (backup feed, music) immediately | Trace the signal chain from source to encoder; identify the break |
+| **Capture card failure** | Switch to Technical Difficulties; attempt to reseat or replace the capture card | Keep a spare capture card at the station for high-stakes events |
+| **Stinger fails to play** | Hard cut instead — do not hold the broadcast waiting for an asset | Investigate the stinger file after the scene switch |
+
+## Emergency Scene Requirements
+
+The **Technical Difficulties** scene must be built and tested before every event. It must:
+- Display a visually appropriate holding graphic — event branding, not a blank screen
+- Include background music — silence during an unexpected hold is immediately alarming to viewers
+- Use a looping animation with no visible seam
+- Contain no live sources — it must function even if all inputs are disconnected
+
+<Callout type="info" title="Test the Technical Difficulties scene">
+  The one scene that must work perfectly is the one you hope never to use. Test it explicitly during setup — trigger it in Studio Mode and confirm the loop, the music, and the graphic are all functioning before the show starts.
+</Callout>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="What is the minimum failover setup for a small production?">
+    At minimum: local SSD recording running before the stream, a mobile hotspot on standby, and a Technical Difficulties scene built and tested. These three cover the most common failure modes and require no additional hardware investment beyond what most operators already have.
+  </Accordion>
+  <Accordion title="Should we tell the audience when we are experiencing technical difficulties?">
+    Yes — after switching to the Technical Difficulties scene, post a brief status update on the org's social channels. Do not leave viewers with no information. A simple "We are experiencing technical issues and will return shortly" prevents audience abandonment and demonstrates professionalism.
+  </Accordion>
+  <Accordion title="How long should we wait before escalating from a stream drop to a full failover?">
+    Attempt reconnection for no more than 2 minutes. If the primary stream does not reconnect within that window, activate the secondary connection. Do not spend extended time troubleshooting a single failure path while the Technical Difficulties scene is showing — the audience's patience has a limit.
+  </Accordion>
+</Accordions>

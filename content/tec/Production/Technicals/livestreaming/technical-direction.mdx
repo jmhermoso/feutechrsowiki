@@ -1,0 +1,99 @@
+---
+title: Technical Direction
+description: Scene management, source switching workflow, and TD responsibilities before and during a live broadcast.
+icon: Gavel
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+# Technical Direction
+
+The Technical Director manages the encoder, switches between scenes and sources, and maintains broadcast quality for the duration of the event. The TD does not handle physical cables or on-site setup during the show — that is pre-production. Once the stream is live, the TD's focus is entirely on the software and the output.
+
+<Callout type="warn" title="The TD does not leave the station while live">
+  Once the broadcast begins, the TD remains at the encoding station. All physical issues are handled by the floor crew. The TD communicates via comms — not by walking away from the machine.
+</Callout>
+
+## Pre-Show: The Go/No-Go Protocol
+
+Run this checklist in order. The show does not go live until every item is confirmed.
+
+<Steps>
+  <Step>
+    ### -30 Minutes: Source Check
+    Verify every source that will appear in the broadcast: cameras, game capture, presentation input, audio feeds, overlays. Any source that cannot be confirmed stable is cut from the show — do not go live with an unverified source.
+  <Step>
+  </Step>
+    ### -20 Minutes: Audio Check
+    Confirm audio levels from every active source. Run a full gain staging check (see Audio Engineering). Test the stream preview audio on headphones — not just the monitor speakers.
+  <Step>
+  </Step>
+    ### -15 Minutes: Go / No-Go Call
+    The TD calls a Go/No-Go with every department head. Each department confirms their area is ready. Any No-Go is addressed immediately. Unstable sources are cut. The stream does not start until all departments confirm Go.
+  <Step>
+  </Step>
+    ### -10 Minutes: Scene Readiness
+    Confirm the starting scene is live in preview. The "Starting Soon" screen is on program output. All transition stingers are loaded and tested. The local recording to SSD has been started — recording begins before the stream, not at the same time.
+  <Step>
+  </Step>
+    ### -5 Minutes: Final Checks
+    Confirm stream key is correct and the destination (platform) is set. Confirm local recording is running. Confirm comms with floor crew and game observer are active. Stand by for the start call.
+  </Step>
+</Steps>
+
+## Scene Management During Broadcast
+
+<Tabs items={['Scene Types', 'Switching Protocol', 'Emergency Procedures']}>
+  <Tab value="Scene Types">
+    Every broadcast should have these scenes built and ready before the show:
+
+    | Scene | Purpose |
+    | :--- | :--- |
+    | **Starting Soon** | Pre-show holding screen with music and animated loop |
+    | **Program** | Main broadcast view — cameras, game capture, overlays active |
+    | **Intermission** | Between segments — music, animated loop, no cameras |
+    | **Technical Difficulties** | Emergency scene — music, animated loop, no live sources exposed |
+    | **Ending / Outro** | Post-show screen with credits or social info |
+    | **Full-Screen Plate** | Clean full-screen graphic for announcements or sponsor displays |
+  </Tab>
+  <Tab value="Switching Protocol">
+    Scene switches follow a deliberate sequence — never cut blindly:
+
+    1. **Preview the destination scene** in the preview monitor before switching
+    2. **Confirm the scene is clean** — correct sources visible, no unintended elements
+    3. **Call the cut** over comms so floor crew is aware
+    4. **Execute the transition** — use a stinger for major scene changes, a hard cut for rapid switches during action
+    5. **Verify the program output** immediately after switching — confirm the correct scene is now live
+
+    Never use an animated transition (stinger) for emergency switches. Hard cut to Technical Difficulties immediately if something goes wrong.
+  </Tab>
+  <Tab value="Emergency Procedures">
+    **Main PC crash:**
+    Hard cut to Technical Difficulties on a secondary laptop if available. Reboot the main station. Do not attempt to troubleshoot on the primary machine while live — switch first, fix second.
+
+    **Source drops unexpectedly:**
+    Cut the dropped source from program immediately. Fill with an available source (camera, holding graphic). Investigate the drop while off that source.
+
+    **Stream drops:**
+    Do not panic. The local SSD recording continues. Attempt to reconnect the stream from the encoder. If reconnection fails within 2 minutes, switch to Technical Difficulties, post a status update on the org's social channels, and continue recording locally for VOD upload after the event.
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="Should the TD also be calling shots for the cameras?">
+    The TD can issue camera direction over comms, but in larger productions this role belongs to a dedicated Director or Replay Operator. In small productions where the TD is the only technical operator, they manage both. Avoid splitting attention during complex sequences — pre-plan camera sequences and communicate them to operators before the segment begins.
+  </Accordion>
+  <Accordion title="When should we use a stinger vs. a hard cut?">
+    Use stingers for planned, non-urgent scene transitions: opening the show, going to intermission, returning from break. Use hard cuts for rapid switches during live action (camera to camera during a play), and always for emergency switches. A stinger during an emergency wastes precious seconds.
+  </Accordion>
+  <Accordion title="What is the correct order to start recording and streaming?">
+    Always start the local SSD recording first, then start the stream. This ensures that if the stream fails to connect, the recording has already captured the content. Never start the stream first.
+  </Accordion>
+</Accordions>

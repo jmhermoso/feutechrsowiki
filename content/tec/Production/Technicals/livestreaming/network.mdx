@@ -1,0 +1,78 @@
+---
+title: Network Infrastructure
+description: Hardwire standards, static IP configuration, encoding bitrate specifications, and stream stability protocols.
+icon: Network
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Network Infrastructure
+
+A stable broadcast depends entirely on a stable network. No amount of production quality recovers a stream that drops every five minutes. Network configuration is not optional — it is a prerequisite.
+
+<Callout type="warn" title="Never stream over Wi-Fi">
+  Wi-Fi introduces variable latency, packet loss, and interference that causes stream instability. All production PCs must be connected via Cat6 Ethernet. No exceptions.
+</Callout>
+
+## Hardwire Standards
+
+- Use **Cat6 Ethernet** cables for all production machines — encoding PC, replay PC, and any NDI source machines
+- If the venue does not have wired network ports, use a dedicated travel router connected to the venue's network via Ethernet, then wire all production machines to that router
+- Keep cable runs as short as possible — long Cat6 runs near power cables can introduce interference
+- Label all Ethernet cables at both ends before running them — unlabeled cables become a troubleshooting problem during the show
+
+## Static IP Configuration
+
+In multi-PC setups using NDI (Network Device Interface), all machines must be assigned Static IPs. Dynamic IPs assigned by DHCP can change when a device reconnects to the network, causing NDI sources to disappear from the encoder.
+
+**Standard static IP assignment pattern:**
+
+| Device | Example Static IP |
+| :--- | :--- |
+| Encoding PC (OBS/vMix) | 192.168.1.10 |
+| Camera/NDI Source PC 1 | 192.168.1.11 |
+| Camera/NDI Source PC 2 | 192.168.1.12 |
+| Replay PC | 192.168.1.13 |
+| Router/Gateway | 192.168.1.1 |
+
+Assign static IPs through each machine's network adapter settings, not through the router's DHCP reservation. Document the IP assignments in the production runsheet before every event.
+
+## Encoding Specifications
+
+Set bitrate and resolution in OBS/vMix based on the confirmed upload speed of the venue's connection. Test upload speed on the encoding PC — not a phone or separate machine — at least 30 minutes before the event.
+
+| Output | Resolution | Bitrate | Use Case |
+| :--- | :--- | :--- | :--- |
+| **High quality** | 1080p 60fps | 6000–8000 kbps | Venue with confirmed fast, stable connection |
+| **Standard** | 720p 60fps | 3500–4500 kbps | Typical venue connection or uncertain stability |
+| **Fallback** | 720p 30fps | 2000–2500 kbps | Slow or shared venue Wi-Fi as last resort |
+
+<Callout type="info" title="Leave headroom">
+  Your upload bitrate should not exceed 70–80% of the venue's confirmed upload speed. A 10 Mbps connection supports a maximum of 8000 kbps comfortably — do not attempt to push the full ceiling.
+</Callout>
+
+## Redundancy
+
+Always have a backup internet source available. Primary connection failure is not a hypothetical — it happens at venues.
+
+- Maintain a **secondary mobile hotspot** (separate carrier from any venue Wi-Fi) available at the encoding station
+- If budget allows, use a **bonding router** that combines multiple connections (Ethernet + hotspot) into a single stable output
+- Pre-configure the encoding PC to switch to the hotspot quickly — do not set this up for the first time during an outage
+- If the primary stream drops, switch to the Technical Difficulties scene first, then address the connection — never troubleshoot live on program output
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="What if the venue only has Wi-Fi and no Ethernet ports?">
+    Connect a travel router to the venue's Wi-Fi via its WAN port, then wire all production machines to the router's LAN ports via Ethernet. This gives you wired connections even in a Wi-Fi-only venue. Alternatively, use a dedicated 5G mobile router as the primary connection to bypass the venue network entirely.
+  </Accordion>
+  <Accordion title="How do we test if our bitrate is stable enough before going live?">
+    Use OBS's built-in network stats (View → Stats) or a tool like Speedtest CLI on the encoding PC. Watch for dropped frames and upload fluctuation. Run the test for at least 5 minutes — a single speed reading does not confirm stability. If dropped frames exceed 0.5% during testing, reduce bitrate or switch connections before going live.
+  </Accordion>
+  <Accordion title="Does NDI work over Wi-Fi?">
+    Technically yes, but it is not recommended for production use. NDI streams are high-bandwidth and sensitive to packet loss. On a congested or variable Wi-Fi network, NDI sources will stutter or drop. Always wire NDI machines to the same switch via Ethernet.
+  </Accordion>
+</Accordions>

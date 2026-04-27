@@ -1,0 +1,143 @@
+---
+title: Audio Engineering
+description: Signal flow, microphone selection, gain staging standards, and the Black Book of standardized troubleshooting fixes for common audio failures.
+icon: AudioLines
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Audio Engineering
+
+The audio signal chain is the most sensitive part of any production. A single break anywhere in the chain — a loose cable, a clipping preamp, a misconfigured software input — results in immediate loss of viewer engagement. Unlike video issues that viewers sometimes tolerate, bad audio causes people to leave.
+
+<Callout type="warn" title="Distortion cannot be fixed downstream">
+  If the signal clips at the microphone preamp or mixer, no amount of software processing can restore the original audio. Get the gain right at the source first — every time.
+</Callout>
+
+## Signal Flow
+
+Every officer must understand the complete path an audio signal travels from source to output. Knowing the chain enables rapid isolation of where a failure has occurred.
+
+```
+Input (Mic / PC Audio)
+  → Preamp / Mixer
+    → Compressor / Limiter
+      → Encoder (OBS / vMix)
+        → Output (Stream / Recording)
+```
+
+**The rule of green:** The signal meter must read green at every stage of this chain. If any stage shows yellow sustained or red at any point, that stage is misconfigured. Fix it at the source — do not compensate by boosting a later stage.
+
+## Microphone Selection
+
+<Tabs items={['Dynamic Microphones', 'Condenser Microphones']}>
+  <Tab value="Dynamic Microphones">
+    Dynamic microphones use electromagnetic induction and require no phantom power. They are durable and have a tighter pickup pattern that rejects background noise.
+
+    | Property | Detail |
+    | :--- | :--- |
+    | **Best for** | Loud stage environments, handheld hosts, venues with poor acoustic treatment |
+    | **Sensitivity** | Low — needs to be close to the source to pick up cleanly |
+    | **Phantom power** | Not required |
+    | **Common examples** | Shure SM58 (vocal), Shure SM7B (broadcast), Shure SM57 (instrument) |
+
+    Use dynamic mics when the environment is loud, unpredictable, or acoustically untreated. Their low sensitivity is an advantage in noisy venues.
+  </Tab>
+  <Tab value="Condenser Microphones">
+    Condenser microphones use a charged capacitor element and require 48V phantom power from the mixer. They capture a wider frequency range with greater sensitivity and detail.
+
+    | Property | Detail |
+    | :--- | :--- |
+    | **Best for** | Controlled booth environments, commentary desks, studio recording |
+    | **Sensitivity** | High — picks up room noise; requires a quiet, treated environment |
+    | **Phantom power** | Required (48V) — enable on the mixer channel before use |
+    | **Common examples** | Audio-Technica AT2020, Rode NT1, Shure SM87A |
+
+    Use condenser mics only in controlled environments. In a loud venue, their high sensitivity will pick up crowd noise, HVAC, and reflections that will ruin the mix.
+  </Tab>
+</Tabs>
+
+## Gain Staging
+
+Gain staging is the discipline of setting the correct signal level at every point in the chain. Follow this sequence from source to output — never work backwards.
+
+1. **Preamp / Mic gain** — Set so that the loudest expected input (e.g. a presenter shouting) peaks at around **-12 dBFS** on the channel meter. This leaves headroom for transients.
+2. **Channel fader** — Set to unity (0 dB) as a baseline. Adjust only after the preamp is correctly set.
+3. **Master bus** — Should peak between **-6 dBFS and -3 dBFS** during loudest moments. Never allow sustained readings above -3 dBFS.
+4. **Encoder input** — In OBS/vMix, the audio meter should peak in the **green**, occasionally touching yellow on transients. Red at any point means the encoder input is too hot — reduce the master bus level or the encoder input gain.
+
+## The Black Book — Standardized Troubleshooting
+
+These are the documented fixes for the most common audio failures encountered in production. When a problem occurs, consult this list before improvising.
+
+<Accordions>
+  <Accordion title="Ground Loop (Humming or Buzzing)">
+    **Symptom:** Constant low hum, typically at 50Hz or 60Hz, present even when no one is speaking.
+
+    **Cause:** Multiple pieces of equipment share the same power ground at different electrical potentials, creating a current loop that induces noise into the audio signal.
+
+    **Fix:**
+    1. Insert a **DI box** between the problematic source and the mixer, with the ground lift switch engaged
+    2. If the hum comes from a laptop or PC connected to the mixer, use the **ground lift** on that mixer channel
+    3. As a last resort, plug all equipment into the same power strip to normalize the ground reference — do not leave equipment on separate circuits
+  </Accordion>
+  <Accordion title="Audio / Video Sync Issues">
+    **Symptom:** Audio arrives before or after the corresponding video — lips are out of sync with speech on stream.
+
+    **Cause:** Video processing introduces latency in the encoder pipeline that audio does not share, causing audio to arrive early relative to the video.
+
+    **Fix:**
+    1. In OBS, open **Advanced Audio Settings** and apply a positive millisecond delay to the affected audio source
+    2. Start with **100ms** and increase in 50ms increments while monitoring the stream preview
+    3. Typical range for most setups is **100ms–300ms**
+    4. If audio is late (arrives after video), the problem is upstream — check capture card latency and USB audio interface buffer settings
+  </Accordion>
+  <Accordion title="Mic Not Detected / No Signal">
+    **Symptom:** No signal on the channel meter even with the mic connected and gain turned up.
+
+    **Fix — work down the chain:**
+    1. Check the physical XLR connection at both ends — reseat the cable
+    2. Confirm the channel is not muted on the mixer
+    3. If using a condenser mic, confirm **48V phantom power** is enabled on that channel
+    4. Test the cable with a known-working mic to isolate cable vs. mic failure
+    5. Check the encoder input — confirm the correct audio device is selected in OBS/vMix and the channel is not muted in software
+  </Accordion>
+  <Accordion title="Clipping / Distortion">
+    **Symptom:** Harsh, crackling distortion on loud sounds. Meter consistently hitting red.
+
+    **Fix:**
+    1. Reduce the **preamp gain** (mic gain knob) first — this is almost always the source
+    2. Check that the channel fader is not boosted above unity
+    3. If the source is a PC audio output (music, game audio), reduce the output volume in the source application before it reaches the mixer
+    4. Add a **compressor** on the channel to catch transient peaks — set a threshold around -12 dBFS with a 4:1 ratio as a starting point
+  </Accordion>
+  <Accordion title="Echo or Feedback">
+    **Symptom:** A ringing or echo loop audible through the monitors or stream output.
+
+    **Cause:** A microphone is picking up its own output from a nearby speaker, creating a feedback loop.
+
+    **Fix:**
+    1. Immediately reduce the master fader to stop the loop
+    2. Identify which mic is the source — mute channels one by one to find it
+    3. Increase physical distance between the mic and the speaker, or reposition the speaker so it is behind the mic's null point (the rear of a cardioid pattern)
+    4. Apply a **gate** or **high-pass filter** on the offending channel to reduce sensitivity to the speaker frequencies
+  </Accordion>
+</Accordions>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="Should we always use a compressor on every channel?">
+    Not necessarily. Compressors are most useful on vocals and commentary where volume is inconsistent between speakers. For line-level sources like music playback or PC audio that are already level-controlled, a compressor adds little benefit and can introduce unwanted pumping artifacts if misconfigured.
+  </Accordion>
+  <Accordion title="What is the difference between a compressor and a limiter?">
+    A compressor gradually reduces gain above a threshold at a set ratio (e.g. 4:1 — every 4dB above threshold becomes 1dB). A limiter is a compressor with an extreme ratio (typically 20:1 or higher) that hard-caps the signal at the threshold, preventing any peak from exceeding it. Use a limiter as the last safeguard on the master bus.
+  </Accordion>
+  <Accordion title="Can we use a laptop headphone jack instead of an audio interface?">
+    Avoid it. Consumer headphone outputs are unbalanced, have poor noise floors, and are susceptible to ground loop interference. Use a dedicated USB audio interface with balanced XLR outputs for any production where audio quality matters. If a headphone jack is the only option, route it through a DI box before the mixer.
+  </Accordion>
+</Accordions>

@@ -1,0 +1,103 @@
+---
+title: Tekken 7
+description: Observer guide for Tekken 7 — 1v1 fighting game with round states, wall carry, rage mechanics, and character-specific punish windows.
+icon: Zap
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Tekken 7
+
+Tekken 7 is a 3D one-on-one fighting game developed by Bandai Namco. Two players compete using characters with unique move sets, attempting to deplete the opponent's health bar across a best-of-three rounds format in a standard match (best-of-five in high-stakes sets).
+
+<Callout type="info" title="Observer role in fighting games">
+  In Tekken 7, the observer does not control a moving in-game camera — the broadcast view is a fixed side-on perspective. The observer's primary role is managing the stream overlay, calling for player cam cuts, and timing reaction shots to significant moments.
+</Callout>
+
+## Match Structure
+
+| Term | Meaning |
+| :--- | :--- |
+| **Round** | A single life bar exchange — first player to drain the opponent's health wins the round |
+| **Set** | The full match — typically best of 3 rounds (best of 5 in grand finals) |
+| **Health bar** | Each player's current life — displayed prominently at the top of the screen |
+| **Perfect** | Winning a round without taking any damage |
+| **Double KO** | Both players are KO'd simultaneously — typically results in a tiebreaker round |
+| **Time out** | Round ends when the timer expires — the player with more health remaining wins |
+
+## Key Mechanics and Callouts
+
+<Tabs items={['Rage System', 'Wall Mechanics', 'Movement and Spacing', 'Character Types']}>
+  <Tab value="Rage System">
+    The Rage system activates when a player's health drops below approximately 25%. It increases damage output and grants access to two powerful options.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Rage** | Active state when health is low — indicated by a red glow on the character |
+    | **Rage Art** | A powerful single-use reversal move that absorbs an opponent's attack and deals high damage. Each character has a unique Rage Art animation. |
+    | **Rage Drive** | An enhanced version of a specific move — deals more damage and extends combos. Less risky than a Rage Art. |
+    | **Rage spent** | Once a Rage Art or Rage Drive is used, Rage is deactivated for the rest of the round |
+
+    **Observer priority:** Rage activation is a visible state change signaling the round's climax. A Rage Art attempt is a high-drama moment — capture whether it connected or was baited out.
+  </Tab>
+  <Tab value="Wall Mechanics">
+    Walls are the arena boundaries. Carrying an opponent into a wall opens extended combo opportunities and shifts round momentum.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Wall carry** | A combo sequence that moves the opponent across the arena into a wall |
+    | **Wall splat** | When a character slams into the wall, staggered and vulnerable |
+    | **Wall combo** | A follow-up combo after a wall splat — typically the highest damage sequence in a round |
+    | **Floor break** | Certain stages have breakable floors — falling through changes the arena and resets positioning |
+    | **Stage transition** | Moving between stage sections via a wall or floor break |
+
+    **Observer priority:** Wall carries are visually dramatic and strategically decisive. Follow the carry across the arena — do not stay centered on the original fight position.
+  </Tab>
+  <Tab value="Movement and Spacing">
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Neutral** | The phase when neither player is committing to attacks — both managing space |
+    | **Whiff** | An attack that misses — leaves the attacker vulnerable to a punish |
+    | **Punish** | Attacking an opponent during recovery frames after a whiffed or blocked move |
+    | **Sidestep** | Moving perpendicular to the opponent to evade linear attacks |
+    | **Backdash** | Moving backward quickly to create space and bait whiffs |
+    | **Launch** | A hit that sends the opponent airborne, starting a juggle combo |
+    | **Juggle / Air combo** | A combo performed while the opponent is airborne after a launch |
+  </Tab>
+  <Tab value="Character Types">
+    | Type | Description | Examples |
+    | :--- | :--- | :--- |
+    | **Rushdown** | Aggressive, fast pressure characters | Law, Hwoarang, Jin |
+    | **Grappler** | Powerful throw-based characters requiring close range | King, Armor King |
+    | **Zoner** | Space-controlling characters who punish approaches | Negan, Geese |
+    | **All-rounder** | Balanced characters with tools for most situations | Kazuya, Devil Jin, Paul |
+
+    **Observer note:** Knowing character types helps anticipate the next moment. A grappler closing distance is about to throw — capture the read. A zoner forced into close range is under pressure — that tension is the story.
+  </Tab>
+</Tabs>
+
+## Round State Priority Guide
+
+| Situation | Observer Action |
+| :--- | :--- |
+| **Both players full health, neutral** | Wide shot — show both characters and the stage |
+| **Rage activated** | Note it — the next aggressive exchange is the climax of the round |
+| **Rage Art attempt** | Stay on the full exchange — capture the result |
+| **Wall carry in progress** | Follow the carry across the stage — do not stay centered |
+| **Low health on both sides** | Stay wide — either player could win in the next exchange |
+| **Round won** | Cut to player cam for the reaction before resetting to game view |
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="When should we cut to the player cam?">
+    Cut to player cam on round win reactions, Rage Art moments (before and after), and any sequence where the crowd reacts audibly. Player cams add the human element that makes fighting game broadcasts compelling — use them at emotional peaks, not during neutral neutral gameplay.
+  </Accordion>
+  <Accordion title="What is a 'read' and why does it matter for broadcast?">
+    A read is when a player correctly predicts and counters their opponent's action. For example, baiting a Rage Art by not attacking, then punishing the recovery. Reads are the intellectual highlight of fighting games — when one happens, the crowd reacts and the player reacts. Capture both.
+  </Accordion>
+</Accordions>

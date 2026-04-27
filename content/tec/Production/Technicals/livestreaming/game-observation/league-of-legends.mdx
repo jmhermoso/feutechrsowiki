@@ -1,0 +1,132 @@
+---
+title: League of Legends
+description: Observer guide for League of Legends — 5v5 MOBA covering Summoner's Rift, ARAM, Arena, and Swiftplay with Baron, Dragon, Herald, and mode-specific callouts.
+icon: Crown
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# League of Legends
+
+League of Legends is a 5v5 PC MOBA developed by Riot Games. Two teams — **Blue Side** and **Red Side** — compete to destroy the opposing **Nexus**, the central structure in their base. The primary map is Summoner's Rift, but the org also covers ARAM, Arena, and Swiftplay.
+
+## Game Modes
+
+<Tabs items={["Summoner's Rift", 'ARAM', 'Arena', 'Swiftplay']}>
+  <Tab value="Summoner's Rift">
+    The standard competitive format. Three lanes (Top, Mid, Bottom), two jungles, and a river connecting them. First team to destroy the enemy Nexus wins.
+
+    ### Map Structure
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Nexus** | The main structure — destroying it ends the game |
+    | **Inhibitor** | Structure behind Tier 3 towers — destroying it spawns Super Minions in that lane |
+    | **Top / Mid / Bot Lane** | The three main lanes |
+    | **Jungle** | The area between lanes containing camps, Dragon pit, and Baron pit |
+    | **River** | The diagonal waterway dividing the map — key movement corridor |
+    | **Blue Side / Red Side** | The two team factions based on their starting position |
+
+    ### Key Objectives
+
+    | Objective | Location | Effect |
+    | :--- | :--- | :--- |
+    | **Baron Nashor** | North river pit (spawns at 20 min) | Empowers nearby minions for the holding team — premier late-game objective |
+    | **Dragon** | South river pit (spawns at 5 min) | Grants stacking elemental buffs (Soul) — each type changes the game differently |
+    | **Dragon Soul** | After 4 elemental dragons of the same type | Powerful permanent buff — game-changing if secured |
+    | **Elder Dragon** | Spawns after one team has Dragon Soul | Temporarily empowers the holding team's Soul effect — often ends games |
+    | **Rift Herald** | North river pit (before 20 min) | Charges towers and enables a powerful lane push |
+    | **Rift Scuttler** | River (spawns at 3:30, 7:00) | Grants vision and movement speed in the river — early jungle priority objective |
+    | **Tower Plates** | First 14 minutes only | Destroying them grants bonus gold — early objective before towers can be chunked |
+
+    ### Key Callouts
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Gank** | Jungler leaving their camp to attack an enemy laner |
+    | **Dive** | Attacking an enemy hero under a turret |
+    | **Recall / Back** | A player returning to base to heal and purchase items |
+    | **Rotation** | Moving from one lane or area to another to apply pressure |
+    | **Ace** | Eliminating all five members of the opposing team |
+    | **Pentakill** | One player killing all five opponents — the broadcast highlight |
+    | **Split push** | One player pushing a side lane while the rest of the team applies pressure elsewhere |
+    | **Engage** | A player or team initiating a teamfight |
+
+    ### Observer Priority Guide
+
+    | Phase | Priority |
+    | :--- | :--- |
+    | **Early (0–14 min)** | Follow Jungler rotations and ganks; show Rift Scuttler fights; track Tower Plate destruction |
+    | **Mid game** | Dragon fights and Rift Herald fights — these set the game's momentum |
+    | **Late game** | Baron pit and Dragon Soul / Elder fights — decisive in nearly every game |
+    | **End game** | Inhibitor dives, Nexus fights, base races |
+  </Tab>
+  <Tab value="ARAM">
+    ARAM (All Random All Mid) is played on the Howling Abyss — a single-lane bridge map. All players are assigned random champions. There are no jungles, no objectives other than towers and the Nexus, and no base recalls (health relics replace the shop).
+
+    ### Key Differences from Summoner's Rift
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Howling Abyss** | The single-lane ARAM map |
+    | **Health Relic** | A health pickup in the middle of the map — worth contesting in close fights |
+    | **Poke** | Ranged harass to whittle down opponents before a full teamfight |
+    | **Engage / All-in** | Committing the full team to a fight — the decisive moment in ARAM |
+    | **AFK check** | Both teams standing at the front of the lane without committing — waiting for the other to engage |
+    | **Cannon / Siege** | A powerful ranged minion that makes pushing significantly easier |
+
+    **Observer priorities in ARAM:**
+    - The entire game happens in one lane — the camera perspective is naturally simpler
+    - **Full teamfights** are the entire broadcast — every player is involved
+    - Track the **health relic** when teams are evenly matched — contesting it triggers a fight
+    - Show the **tower HP** when a push is in progress — the tower fall is the broadcast moment
+    - ARAM favors **poke compositions** — show the accumulated poke damage leading to an engage
+  </Tab>
+  <Tab value="Arena">
+    Arena is a 2v2v2v2 format where four teams of two compete in a series of combat rounds. Teams fight in a small circular arena, and the losers of each round take damage. Teams that die in the arena are placed in a waiting room and return in the next round.
+
+    ### Key Concepts
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Round** | A single combat sequence — teams fight until one side is eliminated |
+    | **Anvil / Augment** | At the start and between rounds, players choose from three augments that permanently modify their champion's abilities |
+    | **Health (out of arena)** | Each team has a shared health pool that decreases when they lose rounds — reaching 0 eliminates the team |
+    | **Combat round** | The active fight phase — all surviving teams fight simultaneously in the arena |
+    | **Camfire / Prismatic** | High-rarity augments — extremely powerful and often game-deciding |
+    | **Final round** | Last two teams remaining — winner-take-all |
+
+    **Observer priorities in Arena:**
+    - **Augment selection** screens are key moments — show the choices, especially Prismatic augments
+    - With multiple fights happening simultaneously, prioritize the **fight closest to elimination**
+    - The **final round** (last two teams) is the full broadcast focus — treat it like a 2v2 teamfight in Summoner's Rift
+    - Track **team health bars** shown on the scoreboard — teams near 0 HP are in danger of elimination
+  </Tab>
+  <Tab value="Swiftplay">
+    Swiftplay is a faster variant of Summoner's Rift. The map and objectives are the same, but the game accelerates through several design changes: faster leveling, faster minion waves, and slightly adjusted objective timers.
+
+    **Key differences from standard Summoner's Rift:**
+    - Games typically end in 15–20 minutes rather than 30–40 minutes
+    - The early game is compressed — ganks and objective contests happen sooner
+    - All standard Summoner's Rift callouts and priorities apply — refer to that tab for objective and phase guidance
+    - The observer must adjust pacing expectations: what would be a mid-game objective fight in standard SR may happen at 8–10 minutes in Swiftplay
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="When should I focus on Baron vs. Dragon?">
+    Baron is the higher-priority broadcast moment in the late game — a won Baron fight often leads directly to inhibitors and the Nexus. However, Dragon Soul and Elder Dragon are equally decisive if one team is close to securing them. Track which objective the leading team is more likely to contest and position there.
+  </Accordion>
+  <Accordion title="What is a Pentakill and how do I make sure it's captured?">
+    A Pentakill is one player eliminating all five opponents. It is the single highest-excitement moment in a League broadcast. If a player is on a quadrakill (4 kills), lock onto them immediately and do not cut away for any reason until the fifth kill happens or the opportunity ends.
+  </Accordion>
+  <Accordion title="How do I handle a split-push situation on camera?">
+    Split-push creates a two-story moment — one player pushing a side lane while a fight happens elsewhere. Call it over comms for the TD to consider a split-screen overlay. Default to following the teamfight unless the split-push is about to take an inhibitor or the Nexus.
+  </Accordion>
+</Accordions>

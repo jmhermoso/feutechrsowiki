@@ -1,0 +1,100 @@
+---
+title: Tetris
+description: Observer guide for Tetris — competitive puzzle game covering board state, garbage mechanics, T-spin setups, back-to-back tracking, and KO moments.
+icon: Grid2x2
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Tetris
+
+Competitive Tetris (as covered in formats like Tetris Effect: Connected and Puyo Puyo Tetris) is a puzzle battle game where players stack falling tetrominoes (geometric pieces) to clear lines. Cleared lines send **garbage** to the opponent's board. The goal is to fill the opponent's board to the top — a **KO** — before they do the same to you.
+
+<Callout type="info" title="Tetris is fast">
+  At high levels, competitive Tetris moves extremely quickly. The observer's role is to call attention to the right board at the right moment — particularly when a player is about to KO or be KO'd.
+</Callout>
+
+## Core Concepts
+
+| Term | Meaning |
+| :--- | :--- |
+| **Tetromino / Piece** | The falling geometric shape made of four squares — seven types: I, O, T, S, Z, J, L |
+| **Stack / Board** | The accumulated pieces on a player's playfield |
+| **Line clear** | Completing a full horizontal row — it disappears and pieces above fall down |
+| **Garbage** | Incomplete rows sent to the opponent's board as a result of line clears — filled except for one random hole |
+| **KO** | Filling an opponent's board to the top — they are eliminated from the round |
+| **Spike** | A sudden high-volume garbage send that threatens to instantly KO the opponent |
+| **Finesse** | The efficiency and accuracy of piece placement — high-level players waste no movement |
+
+## Key Mechanics
+
+<Tabs items={['Garbage and Attacks', 'T-Spin', 'Back-to-Back', 'Board State Reading']}>
+  <Tab value="Garbage and Attacks">
+    Line clears send garbage to the opponent. The amount of garbage depends on how many lines are cleared at once.
+
+    | Clear Type | Lines Cleared | Garbage Sent |
+    | :--- | :--- | :--- |
+    | **Single** | 1 | 0 |
+    | **Double** | 2 | 1 |
+    | **Triple** | 3 | 2 |
+    | **Tetris** | 4 (using an I-piece) | 4 |
+    | **T-Spin Single** | 1 | 2 |
+    | **T-Spin Double** | 2 | 4 |
+    | **T-Spin Triple** | 3 | 6 |
+    | **Perfect Clear** | Full board clear | 10 |
+
+    **Observer priority:** A **Perfect Clear** or a **T-Spin Triple** is the highest-value attack in the game — these are KO threats. When a player sets up for one, that board is the broadcast focus.
+  </Tab>
+  <Tab value="T-Spin">
+    A T-Spin is an advanced technique where the T-shaped piece is rotated into a tight space, clearing lines with higher garbage value than a standard clear of the same number of lines.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **T-Spin setup** | A deliberately shaped gap in the stack designed to accept a T-piece via rotation |
+    | **T-Spin Single (TSS)** | T-piece rotated into a one-line gap — sends 2 garbage |
+    | **T-Spin Double (TSD)** | T-piece rotated into a two-line gap — sends 4 garbage |
+    | **T-Spin Triple (TST)** | T-piece rotated into a three-line gap — sends 6 garbage; rare and powerful |
+    | **Overhang** | The structure above the T-Spin gap that allows the rotation — must be built deliberately |
+
+    **Observer priority:** Recognizing a T-Spin setup before it executes marks an experienced observer. When you see a player building an obvious overhang structure, anticipate the T-Spin and frame the board clearly for the execution.
+  </Tab>
+  <Tab value="Back-to-Back">
+    Back-to-Back (B2B) is a bonus mechanic. When a player executes two or more high-value clears consecutively (Tetris or T-Spin) without a non-special clear in between, each subsequent special clear sends additional garbage.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Back-to-Back (B2B)** | Consecutive special clears — each sends +1 bonus garbage |
+    | **B2B chain** | A sequence of multiple consecutive special clears |
+    | **B2B break** | Executing a non-special clear, ending the B2B chain |
+
+    **Observer priority:** A player maintaining a long B2B chain is continuously sending bonus garbage. Call it out over comms when you notice a chain building — the TD may want to display it or reference it in commentary direction.
+  </Tab>
+  <Tab value="Board State Reading">
+    Reading board state is the core skill of Tetris observation. At a glance, you need to assess:
+
+    | Indicator | What It Means |
+    | :--- | :--- |
+    | **High stack** | Player is in danger — board is filling up |
+    | **Clean, low stack** | Player is in control — has room to build efficiently |
+    | **Incoming garbage meter** | Pending garbage about to arrive — player must deal with it |
+    | **Flat top with a gap** | Player is setting up a T-Spin or Tetris well |
+    | **Messy, uneven stack** | Player is struggling to clear efficiently — vulnerable to spikes |
+
+    **Observer priority:** Switch broadcast focus to the player whose board is at the most critical state. A player with a very high stack about to receive garbage is the tension. A player about to execute a Perfect Clear is the climax.
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="How do I know when a KO is about to happen?">
+    Watch the incoming garbage meter (shown beside the board) and the stack height. If a player has a high, messy stack and a large garbage attack is incoming, a KO is imminent. Shift focus to that board immediately — the KO moment needs to be fully captured.
+  </Accordion>
+  <Accordion title="Which board should I focus on in a close match?">
+    The board that is either closer to winning (executing a spike or Perfect Clear) or closer to losing (high stack, incoming garbage). When both boards are at equivalent states, cut to a split-screen or wide view that shows both simultaneously.
+  </Accordion>
+</Accordions>

@@ -1,0 +1,111 @@
+---
+title: Camera Composition and Engineering
+description: Transmission standards, power management, thermal considerations, and framing guides for different subject types.
+icon: Camera
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Camera Composition and Engineering
+
+Camera operation sits at the intersection of technical engineering and visual storytelling. A camera that is powered incorrectly, overheating, or transmitting over the wrong cable type will fail mid-broadcast. A camera that is technically perfect but framed poorly fails the audience. Both halves matter equally.
+
+## Transmission Standards
+
+The physical connection between the camera and the encoder or switcher determines signal reliability over distance.
+
+<Tabs items={['SDI', 'HDMI', 'Wireless Transmission']}>
+  <Tab value="SDI">
+    SDI (Serial Digital Interface) is the professional broadcast standard for video transmission. It uses a locking BNC connector and carries uncompressed digital video over coaxial cable.
+
+    | Property | Detail |
+    | :--- | :--- |
+    | **Connector** | BNC — locking, pull-resistant |
+    | **Max reliable run** | 100m+ for 3G-SDI at 1080p |
+    | **Signal degradation** | Minimal over long runs — designed for broadcast infrastructure |
+    | **Use case** | Any run over 15ft, permanent installations, outdoor venues |
+
+    **Use SDI for all runs over 50ft.** It is the correct tool for production environments. The locking connector also prevents accidental disconnection during a live broadcast.
+  </Tab>
+  <Tab value="HDMI">
+    HDMI is a consumer-grade connector that carries video and audio over a single cable. It is adequate for short runs but unreliable over longer distances.
+
+    | Property | Detail |
+    | :--- | :--- |
+    | **Connector** | HDMI (A, C, D types) — no locking mechanism |
+    | **Max reliable run** | 15ft for standard passive cables; up to 50ft with active/fiber HDMI |
+    | **Signal degradation** | Significant over longer runs — flickering, dropped signal, handshake failures |
+    | **Use case** | Short-run connections — camera to nearby capture card, laptop to monitor |
+
+    Never use standard HDMI for runs over 15ft in a production environment. If HDMI is the only option at longer runs, use an active HDMI cable or an HDMI-to-SDI converter at the camera end.
+  </Tab>
+  <Tab value="Wireless Transmission">
+    Wireless video systems transmit video over RF (radio frequency) without a physical cable. Used for roaming cameras or positions where cabling is impractical.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Transmitter** | The unit attached to the camera — sends the video signal wirelessly |
+    | **Receiver** | The unit at the encoder or switcher — receives the signal |
+    | **Line of sight** | Direct, unobstructed path between transmitter and receiver — required for stable wireless video |
+    | **Latency** | Wireless systems introduce a small delay — typically 1–3 frames; account for this in sync |
+    | **Frequency / Channel** | RF channel used for transmission — must not conflict with other wireless systems at the venue (audio IEMs, mics) |
+
+    **Ensure line of sight between transmitter and receiver.** Concrete walls, large crowds, and metal structures cause signal dropout. Avoid placing antennas behind any dense obstruction.
+  </Tab>
+</Tabs>
+
+## Power Management
+
+Camera power failure during a broadcast is unrecoverable in the moment. Power management is not optional engineering — it is a prerequisite.
+
+| Solution | Use Case | Notes |
+| :--- | :--- | :--- |
+| **Dummy Battery / DC Coupler** | Continuous power for stationary cameras | Requires a nearby AC outlet; routes power through the battery slot |
+| **V-Mount Battery** | High-capacity portable power for roaming cameras or rigs | Longer run time than standard camera batteries; requires a V-Mount plate |
+| **Standard Camera Battery (spare set)** | Short deployments or backup | Always have at least one fully charged spare per camera — swap before capacity drops below 30% |
+
+<Callout type="warn" title="Never rely on a single battery for a full broadcast">
+  Standard camera batteries are rated for 60–90 minutes of continuous recording under ideal conditions. Heat, screen-on time, and continuous autofocus reduce this significantly. Use a Dummy Battery or V-Mount for any event over 45 minutes.
+</Callout>
+
+## Thermal Management
+
+Mirrorless cameras are prone to overheating during extended recording sessions. Overheating triggers an automatic shutdown — cameras do not warn the crew before it happens.
+
+- **Keep screens flipped out** (away from the camera body) — screens generate heat against the body when folded in
+- **Use external cooling fans** positioned to draw heat away from the camera body during long shoots
+- **Monitor camera temperature indicators** if the model has them — most mirrorless cameras display a temperature warning before shutdown
+- **Avoid direct sunlight** on the camera body during outdoor events — ambient temperature dramatically accelerates overheating
+- **Give cameras rest periods** during intermissions if possible — powering down for 5–10 minutes resets thermal buildup
+
+## Composition Guide
+
+| Subject | Framing | Objective |
+| :--- | :--- | :--- |
+| **Casters / Hosts** | Medium Close-Up (MCU) | Direct engagement with the audience — eyes visible, background in soft focus |
+| **Players (reaction cam)** | Close-Up (CU) | Capture emotional reactions and physical intensity during high-stakes moments |
+| **Crowd** | Wide / Roaming | Establish venue scale and energy — validate the live event atmosphere |
+| **Stage / Full set** | Wide / Establishing | Orient the audience to the physical space at the start of the broadcast |
+| **Award / Handshake moments** | Medium (MS) | Clean frame of the interaction — both subjects visible |
+
+<Callout type="info" title="Player cams are for emotional moments">
+  Player cameras are most valuable during Rage Art reads, last-stock situations, post-match reactions, and clutch moments. Cutting to a player cam during neutral, uneventful gameplay adds nothing. Use them deliberately.
+</Callout>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="When should we use SDI vs HDMI vs wireless?">
+    SDI for any fixed camera run over 15ft. HDMI for short, direct connections (camera to nearby capture card). Wireless for any roaming camera position or any location where running a cable is impractical or unsafe. Never use consumer HDMI for long runs — it will fail during the broadcast.
+  </Accordion>
+  <Accordion title="How do we prevent a camera from overheating at a long event?">
+    Use a Dummy Battery for continuous power (removes the need to swap batteries and reduces one heat source), keep the screen flipped out, position a small fan to draw heat away from the body, and power the camera down during any break longer than 10 minutes. If the venue is hot, position the camera away from heat sources like stage lights and direct sunlight.
+  </Accordion>
+  <Accordion title="What is the correct headroom for a Medium Close-Up of a caster?">
+    Leave approximately one head-height of space between the top of the subject's head and the top of the frame. This is standard broadcast headroom. Too much headroom makes the subject look small and insignificant. Too little (or no headroom) feels claustrophobic and amateurish.
+  </Accordion>
+</Accordions>

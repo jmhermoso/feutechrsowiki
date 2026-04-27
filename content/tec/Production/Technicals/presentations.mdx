@@ -1,0 +1,84 @@
+---
+title: Presentations and Media
+description: Standards for slide acquisition, software handling, and the extended display method for professional output control.
+icon: Presentation
+---
+
+# Presentations and Media
+
+Presentations are the primary visual interface between the production and the audience. How slides are received, displayed, and captured directly determines whether the broadcast looks professional or improvised. Sloppy display management — a stray notification, a visible taskbar, a stuttering transition — breaks audience immersion immediately.
+
+<Callout type="warn" title="Never share your full desktop">
+  Screen sharing the entire desktop exposes system notifications, personal folders, and taskbars to the audience and to the stream recording. This is a non-negotiable violation of production standards. Always use the Extended Display Method.
+</Callout>
+
+## Slide Acquisition
+
+Presenters typically deliver their content in one of two formats. Handle each differently.
+
+<Tabs items={['Canva / Web-Based', 'PowerPoint / Local File']}>
+  <Tab value="Canva / Web-Based">
+    - Run Canva in a **dedicated browser window** — not a tab shared with other pages
+    - Use **Presenter View** to keep speaker notes on the operator monitor while the audience sees only the clean slide output
+    - Open the "Present" window, then drag the full-screen presentation tab to Monitor 2 before going live
+    - Test all embedded video and audio assets at least **30 minutes before the event** — Canva's video playback can stall on slow connections
+  </Tab>
+  <Tab value="PowerPoint / Local File">
+    - **Always download the file to the local machine** before the event — never run from a USB drive or cloud link
+    - Running from USB introduces stuttering during transitions caused by read speed limitations
+    - Use **"Present on Monitor 2"** in PowerPoint's Slide Show settings so slides display full-screen on output while notes remain on Monitor 1
+    - Test all embedded video files for correct audio levels **30 minutes before the event**
+    - Check that fonts render correctly after download — missing fonts substitute silently and break layouts
+  </Tab>
+</Tabs>
+
+## The Extended Display Method
+
+This is the standard configuration for all production setups that involve presentations, slides, or any computer output going to a projector, screen, or encoder.
+
+<Steps>
+  <Step>
+    ### Set Display Mode to Extend
+    In Windows Display Settings, set the PC to **"Extend these displays"** — not Duplicate, not Mirror. Duplicate sends the same image to both monitors, which means the audience sees your operator view.
+  <Step>
+  </Step>
+    ### Assign Monitor Roles
+    - **Monitor 1 (Primary):** Operator view — OBS/vMix, notes, chat, cue sheets
+    - **Monitor 2 (Secondary):** Output — connected via HDMI or DisplayPort to the projector, screen, or encoder input
+  <Step>
+  </Step>
+    ### Configure the Presentation Application
+    Set the presentation software to output on Monitor 2 specifically. See the Slide Acquisition section above for per-application instructions.
+  <Step>
+  </Step>
+    ### Configure the Encoder Capture
+    In OBS or vMix, add a **Display Capture** source and select Monitor 2. This captures only the clean presentation output — not your operator desktop. Alternatively, use **Window Capture** on the specific presentation window if Display Capture introduces performance issues.
+  <Step>
+  </Step>
+    ### Verify Before Going Live
+    Have a second person confirm on the projector or stream preview that the output is clean: no taskbar visible, no notifications, correct slide displayed, audio levels checked.
+  </Step>
+</Steps>
+
+<Callout type="info" title="Media asset testing is mandatory">
+  Any video or audio file embedded in a presentation must be tested at production volume through the actual output chain — not just on headphones or laptop speakers — at least 30 minutes before the event starts.
+</Callout>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="What if the presenter insists on controlling the slides themselves from their own laptop?">
+    Accept the slide file and run it from the production PC instead. If the presenter must use their own device, have them connect via HDMI to a dedicated input on the switcher and treat it as an external camera source — never as a trusted operator machine on the main output chain.
+  </Accordion>
+  <Accordion title="What if a presenter arrives with a file format we can't open?">
+    The production PC should have PowerPoint, LibreOffice Impress, and a browser installed at minimum. For Keynote files from Mac users, request an export to PowerPoint or PDF before the event. Never accept a file for the first time on show day without a prior check.
+  </Accordion>
+  <Accordion title="Why not just duplicate the display instead of extending?">
+    Duplicate mode means whatever is on your operator screen — OBS, chat windows, file explorers, notifications — is also on the audience screen. Extend mode creates a clean separation between what the operator sees and what the audience sees.
+  </Accordion>
+  <Accordion title="What causes slide transition stuttering and how do we fix it?">
+    The most common causes are: running the file from a USB drive (fix: copy to local machine), insufficient VRAM for animated transitions (fix: reduce animation complexity or use a more capable machine), and browser-based presentations on a slow or congested network (fix: download assets in advance or switch to a local file).
+  </Accordion>
+</Accordions>

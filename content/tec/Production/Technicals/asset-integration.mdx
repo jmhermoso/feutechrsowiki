@@ -1,0 +1,129 @@
+---
+title: Asset Integration
+description: Managing static overlays, stingers, full-screen plates, dynamic lower thirds, scoreboards, and live alerts in a broadcast.
+icon: Layers
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Asset Integration
+
+Broadcast assets — overlays, transitions, scoreboards, and alerts — provide the professional finish that distinguishes a production from a raw stream. Managing them correctly means they enhance the broadcast invisibly. Managing them incorrectly means broken transitions, muted promo videos, and misaligned lower thirds that undermine the entire production's credibility.
+
+<Callout type="info" title="Test every asset before the show">
+  An asset that was not tested before going live is an untested risk. Every stinger, every lower third, every promo video must be triggered and verified in the encoder before the audience arrives.
+</Callout>
+
+## Static Assets
+
+Static assets are elements that do not change dynamically during the broadcast. They are built in advance and loaded into the encoder.
+
+<Tabs items={['Stingers', 'Full-Screen Plates', 'Promo Videos']}>
+  <Tab value="Stingers">
+    Stingers are short animated video clips used as scene transitions. They use an **alpha channel** to maintain transparency, allowing the transition to sit over the broadcast without a black frame.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Alpha channel** | The transparency layer in the stinger file — lets the underlying scene show through |
+    | **Cut point** | The millisecond timestamp at which the scene switches, set to the frame where the animation fully obscures the screen |
+    | **Stinger file formats** | `.webm` (VP8/VP9 with alpha) or `.mov` (ProRes 4444 with alpha) — verify your encoder supports the format |
+
+    **Setup in OBS:**
+    1. Add the stinger file as a Stinger Transition in Scene settings
+    2. Set the cut point by scrubbing to the frame where the animation fully covers the screen — note the millisecond value and enter it in the transition settings
+    3. Test the transition in Studio Mode (preview → program) before going live
+    4. Verify there is no flash of black between scenes — if there is, the cut point is too early or too late
+
+    <Callout type="warn" title="Use hard cuts for emergencies">
+      Stingers add time to a scene transition. In an emergency (source drop, technical failure), always hard cut to Technical Difficulties. Never wait for a stinger to complete during a crisis.
+    </Callout>
+  </Tab>
+  <Tab value="Full-Screen Plates">
+    Full-screen plates are static or looping scenes that occupy the entire broadcast frame. They are used for holding screens and transitional moments.
+
+    | Scene | Purpose |
+    | :--- | :--- |
+    | **Starting Soon** | Pre-show holding screen — typically includes a countdown, background music, and event branding |
+    | **Intermission** | Between-segment screen — music, animated loop, social handles |
+    | **Ending / Outro** | Post-show screen — credits, replay links, thank-you messaging |
+    | **Technical Difficulties** | Emergency holding screen — music, animated loop, status message |
+
+    **Requirements for all full-screen plates:**
+    - Must include background music — silence during a holding screen is immediately noticeable
+    - Looping animation must not have a visible loop seam
+    - All text (countdown timers, social handles) must be readable at 720p — the minimum resolution that viewers may be watching at
+  </Tab>
+  <Tab value="Promo Videos">
+    Promo videos are full-screen video segments played during the broadcast — sponsor spots, event recaps, or highlight reels.
+
+    **Critical settings in OBS/vMix:**
+    - Set the source to **unmute on activation** — promo videos that play silently are a production failure
+    - Set **loop** only if the video is intended to repeat (e.g. a short sponsor bumper between segments)
+    - For one-shot promos (highlight reels, sponsor messages), disable looping and advance to the next scene automatically on video completion if the encoder supports it
+    - Test audio levels relative to the rest of the broadcast — promo audio that is significantly louder or quieter than the stream audio is jarring
+  </Tab>
+</Tabs>
+
+## Dynamic Assets
+
+Dynamic assets update in real-time during the broadcast based on game data, operator input, or external feeds.
+
+<Tabs items={['Lower Thirds', 'Scoreboards', 'Live Alerts']}>
+  <Tab value="Lower Thirds">
+    Lower thirds are name plate graphics positioned in the lower portion of the frame. They identify speakers, players, or on-screen subjects.
+
+    **Standards:**
+    - Display duration: **5–10 seconds** — long enough to read comfortably, short enough to not clutter the frame
+    - Animate in and out cleanly — a lower third that pops on without animation looks unpolished
+    - All name spellings must be verified against the Technical Briefing before the show — a misspelled name in a broadcast is a serious credibility issue
+    - Do not display lower thirds during high-action sequences — they obscure relevant frame information during fights or critical moments
+
+    **Timing guide:**
+    - Trigger on the first clean frame of a speaker's shot — not before they appear
+    - Remove before cutting away from the subject — avoid carrying the lower third across a cut
+  </Tab>
+  <Tab value="Scoreboards">
+    Scoreboards display real-time game or match scores. They are linked to an external controller (web-based dashboard, spreadsheet, or integration) rather than updated manually by the TD.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Controller** | The interface used to update the scoreboard — web dashboard, Google Sheets integration, or dedicated scoring software |
+    | **Overlay source** | The browser source in OBS/vMix that renders the scoreboard from the controller |
+    | **Refresh rate** | How quickly the overlay updates when the controller data changes |
+
+    **Pre-show checklist for scoreboards:**
+    - Verify the controller URL is loaded and responsive in the browser source
+    - Test a score update from the controller — confirm it appears in the overlay within 1–2 seconds
+    - Confirm the scoreboard is positioned correctly and does not obscure critical game HUD elements
+    - Assign one operator to manage the controller during the broadcast — scoreboard updates cannot be an afterthought
+  </Tab>
+  <Tab value="Live Alerts">
+    Live alerts are pop-up animations triggered by viewer interactions — follows, subscriptions, donations, or chat events.
+
+    **Standards:**
+    - Alert duration: Keep under 5 seconds — alerts that linger obscure the broadcast
+    - Mute alerts during critical broadcast moments (active gameplay, important speech) — trigger them during natural pauses
+    - Audio volume for alerts must be set relative to stream audio — alerts that are too loud are a common amateur error
+    - For competitive events, consider disabling or delaying alerts entirely during matches — viewer interaction alerts during a tense game moment are disruptive
+
+    **TD responsibility:** The TD controls when alerts fire. Queue them for intermissions and holding screens where possible rather than allowing them to interrupt live content.
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="What file format should stingers be in?">
+    WebM (with VP8 or VP9 codec and alpha channel) is the most compatible format for OBS. ProRes 4444 MOV files work in vMix and high-end encoders. Confirm your encoder's supported alpha formats before the asset is delivered — requesting a re-export on show day is avoidable with early communication.
+  </Accordion>
+  <Accordion title="What do we do if a lower third has the wrong name spelling after it has already aired?">
+    Correct the source file or controller entry immediately and do not use the incorrect version again. Note the error in the post-show debrief. Do not attempt to re-air the corrected version mid-broadcast unless it is absolutely necessary — drawing attention to a correction is often worse than letting it pass.
+  </Accordion>
+  <Accordion title="How do we handle a scoreboard that stops updating during the broadcast?">
+    Immediately switch to manual score display if available (a static graphic with the current score). Investigate the controller connection during the next natural break. Common causes: browser source not refreshed, controller tab inactive, network disruption to the web-based dashboard. Reload the browser source in OBS as the first troubleshooting step.
+  </Accordion>
+</Accordions>

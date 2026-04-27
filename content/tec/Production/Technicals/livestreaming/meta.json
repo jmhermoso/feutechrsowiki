@@ -1,0 +1,9 @@
+{
+  "title": "Livestreaming and Technical Direction",
+  "icon": "Radio",
+  "pages": [
+    "technical-direction",
+    "network",
+    "game-observation"
+  ]
+}

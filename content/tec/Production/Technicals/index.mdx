@@ -1,24 +1,103 @@
 ---
 title: Technicals
-description: Hardware operations, signal routing, streaming infrastructure, equipment maintenance, and live event technical management for TEC Production.
-icon: Settings
+description: Standards, workflows, and engineering protocols for audio, video, broadcast, and game observation across all productions.
+icon: MonitorPlay
 ---
 
-# Technicals
+# Technical Operations
 
-<Callout type="warn" title="Documentation In Progress">
-  This section is currently being developed. Contact the Production Department Head to contribute existing Technical Operations runbooks, hardware documentation, or standards.
+This section governs the technical standards and engineering workflows required to maintain high-fidelity audio, stable video feeds, and resilient broadcasts. These protocols ensure that technical execution remains consistent regardless of which officers are running the show or which venue you are working in.
+
+<Callout type="warn" title="Consistency is the standard">
+  Technical failures are rarely caused by equipment — they are caused by skipping steps. Follow every checklist, every time, regardless of how familiar the setup feels.
 </Callout>
 
-Technicals covers the hardware and infrastructure layer of TEC Production — the systems that make broadcasts, streams, and live events function reliably. This includes signal routing, streaming infrastructure, equipment maintenance schedules, live event runbooks, and network and connectivity management.
+<Cards>
+  <Card
+    title="Presentations and Media"
+    description="Slide acquisition, software standards, and the extended display method for professional output control."
+    href="./Technicals/presentations"
+  />
+  <Card
+    title="Audio Engineering"
+    description="Signal flow, mic selection, gain staging, and standardized troubleshooting for common audio failures."
+    href="./Technicals/audio-engineering"
+  />
+  <Card
+    title="Livestreaming and Technical Direction"
+    description="TD workflow, game observation per title, network infrastructure, and encoding specifications."
+    href="./Technicals/livestreaming"
+  />
+  <Card
+    title="Camera Composition and Engineering"
+    description="Transmission standards, power management, and framing guides for different subject types."
+    href="./Technicals/camera"
+  />
+  <Card
+    title="Asset Integration"
+    description="Static and dynamic overlay management — stingers, lower thirds, scoreboards, and live alerts."
+    href="./Technicals/asset-integration"
+  />
+  <Card
+    title="Redundancy and Failover"
+    description="Plan B protocols for network failure, hardware crashes, and the Go/No-Go pre-show checklist."
+    href="./Technicals/redundancy"
+  />
+</Cards>
 
 ---
 
-## Coming Soon
+## Glossary of Technical Terms
 
-- Standard signal chain diagrams for TEC event types
-- OBS / streaming software configuration templates
-- Equipment inspection and maintenance schedules
-- Live event technical runbooks
-- Incident report templates and review procedures
-- Network setup guides for venue and on-campus shoots
+These are the terms used throughout this section. New officers should read through this before their first production.
+
+<Accordions>
+  <Accordion title="Alpha Channel">
+    A layer in a video or image file that contains transparency information. Used in stingers and overlay graphics so the background of the production shows through. Files with alpha channels are typically exported as `.webm` or `.mov` (ProRes 4444).
+  </Accordion>
+  <Accordion title="Bitrate (kbps)">
+    Kilobits per second — the amount of data used to encode one second of video. Higher bitrate means better image quality but more bandwidth required. A 1080p60 stream typically requires 6000–8000 kbps.
+  </Accordion>
+  <Accordion title="Compressor / Limiter">
+    An audio processor that reduces the dynamic range of a signal. A compressor smooths out volume differences; a limiter hard-caps the signal to prevent clipping and distortion. Both sit in the signal chain between the mixer and encoder.
+  </Accordion>
+  <Accordion title="DI Box (Direct Injection Box)">
+    A device that converts an unbalanced audio signal (e.g. from a laptop headphone jack) to a balanced XLR signal. Also eliminates ground loop hum caused by shared power sources between equipment.
+  </Accordion>
+  <Accordion title="Dummy Battery / DC Coupler">
+    A device shaped like a camera battery that plugs into the battery slot and accepts external DC power. Used to run cameras continuously without battery swaps during long productions.
+  </Accordion>
+  <Accordion title="Gain Staging">
+    The practice of setting the correct signal level at every point in the audio chain — mic preamp, mixer channel, master bus, and encoder input. The goal is a consistently green signal with no clipping at any stage. Distortion introduced at one stage cannot be removed downstream.
+  </Accordion>
+  <Accordion title="Ground Loop">
+    An unwanted electrical current caused by multiple pieces of equipment sharing the same power ground at different potentials. Audible as a low hum (typically 50Hz or 60Hz). Fixed with a DI box or ground lift on the mixer.
+  </Accordion>
+  <Accordion title="HDMI vs SDI">
+    Two standards for transmitting video signals. HDMI is consumer-grade and prone to signal degradation over runs longer than ~15ft. SDI (Serial Digital Interface) is professional-grade and reliable over runs of 100ft or more. Always use SDI for long cable runs.
+  </Accordion>
+  <Accordion title="Lower Third">
+    A graphic overlay positioned in the lower portion of the frame, typically used to display a speaker's name, title, or score. Should appear for 5–10 seconds and then animate out cleanly.
+  </Accordion>
+  <Accordion title="NDI (Network Device Interface)">
+    A protocol that allows video sources to be sent over a local network (LAN) rather than physical cables. Used in multi-PC setups to route camera feeds, capture cards, or computer outputs into a central encoder. Requires Static IPs to prevent source dropouts.
+  </Accordion>
+  <Accordion title="OBS / vMix">
+    The two primary software encoders used in production. OBS (Open Broadcaster Software) is free and widely used. vMix is a paid, more feature-rich alternative. Both handle scene switching, source management, and stream output.
+  </Accordion>
+  <Accordion title="Stinger">
+    A short animated video clip with an alpha channel used as a scene transition. A "cut point" (measured in milliseconds) is set at the frame where the animation fully covers the screen, triggering the scene switch so the cut is invisible to viewers.
+  </Accordion>
+  <Accordion title="Static IP">
+    A manually assigned, fixed IP address for a device on the network. Used in multi-PC broadcast setups so that NDI sources, stream PCs, and replay systems always appear at the same address and do not drop when the network reassigns addresses automatically (DHCP).
+  </Accordion>
+  <Accordion title="V-Mount Battery">
+    A high-capacity rechargeable battery standard used in professional broadcast equipment. Mounts on the rear of cameras or rigs and provides extended run time compared to standard camera batteries. Common in long-format productions where dummy batteries are not practical.
+  </Accordion>
+  <Accordion title="Window Capture vs Display Capture">
+    Two methods of capturing output in OBS/vMix. Window Capture grabs a specific application window regardless of where it is on screen. Display Capture grabs everything visible on a specific monitor. For presentations, Display Capture on Monitor 2 is preferred to ensure clean full-screen output.
+  </Accordion>
+  <Accordion title="XLR">
+    A 3-pin balanced audio connector standard used in professional audio equipment. Balanced XLR cables reject electromagnetic interference over long runs, making them the standard for microphones, mixers, and audio interfaces in production environments.
+  </Accordion>
+</Accordions>

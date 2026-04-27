@@ -1,7 +1,12 @@
 {
   "title": "Technicals",
-  "icon": "Settings",
+  "icon": "MonitorPlay",
   "pages": [
-
+    "presentations",
+    "audio-engineering",
+    "livestreaming",
+    "camera",
+    "asset-integration",
+    "redundancy"
   ]
 }

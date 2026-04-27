@@ -1,0 +1,120 @@
+---
+title: "Call of Duty: Mobile"
+description: Observer guide for CODM — Battle Royale (Isolated and Alcatraz) and Multiplayer modes including Search and Destroy, Hardpoint, and Team Deathmatch.
+icon: Crosshair
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Call of Duty: Mobile
+
+Call of Duty: Mobile is a mobile first-person shooter featuring both a Battle Royale mode and traditional Multiplayer modes. The observer's role and priorities differ significantly between these two formats.
+
+## Battle Royale
+
+<Tabs items={['Isolated (Standard BR)', 'Alcatraz (Fast BR)']}>
+  <Tab value="Isolated (Standard BR)">
+    Isolated is the standard 100-player Battle Royale map. Squads of four drop in, loot, and survive as the safe zone shrinks.
+
+    **Key concepts:**
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Safe Zone / Circle** | The area players must stay inside or take damage. Shrinks over time forcing engagements. |
+    | **Zone damage** | Damage taken per second when outside the safe zone — increases each phase |
+    | **Drop location** | Where the squad lands at the start — determines early loot and early fights |
+    | **Hot drop** | Landing in a high-traffic area for early action — high risk, high reward |
+    | **Final circle** | The last safe zone — typically a very small area where the last squads fight |
+    | **Third party** | Attacking a squad that is already engaged in a fight with another squad |
+    | **Rotation** | Moving from one position to the next safe zone before it closes |
+    | **UAV** | Reconnaissance tool that reveals enemy positions on the minimap |
+    | **VTOL** | High-damage killstreak air support |
+
+    **Observer priorities:**
+    - Early game: Follow the squad's drop and first engagement. Hot drop = immediate action.
+    - Mid game: Track zone rotations and any third-party opportunities
+    - Late game (final circles): Wide angle showing all remaining squads' positions when possible; cut to player POV during active gunfights
+    - **Last squad standing fights** are the primary broadcast moment — anticipate them as circle shrinks
+  </Tab>
+  <Tab value="Alcatraz (Fast BR)">
+    Alcatraz is a smaller, faster Battle Royale map set on an island prison. Players respawn when their squad is alive until a final phase, which means continuous action throughout.
+
+    **Key differences from Isolated:**
+    - **Respawn mechanic:** Players respawn as long as one teammate is alive — early deaths are not eliminated, just set back
+    - **No loot phase:** The map is small enough that engagements start almost immediately after drop
+    - **Final Phase:** Respawns are disabled in the final circle — deaths are permanent from this point
+
+    **Observer priorities:**
+    - Action is near-constant — stay close to gunfights rather than following rotations
+    - **Final Phase announcement** is a key broadcast moment — call it out over comms for the TD
+    - Prioritize the squad with the most eliminations or the last surviving squad in the final phase
+  </Tab>
+</Tabs>
+
+## Multiplayer Modes
+
+<Tabs items={['Search and Destroy', 'Hardpoint', 'Team Deathmatch']}>
+  <Tab value="Search and Destroy">
+    Search and Destroy (S&D) is a round-based mode. The attacking team plants a bomb (the **Bomb**) at one of two designated sites (Site A or Site B). The defending team must prevent the plant or defuse it. No respawns within a round — every death is permanent until the round ends.
+
+    **Key callouts:**
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Site A / Site B** | The two bomb plant locations on the map |
+    | **Bomb carrier** | The attacking player holding the bomb — highest priority target for defenders |
+    | **Plant** | When the bomb carrier begins arming the bomb at a site |
+    | **Defuse** | When a defender attempts to disarm a planted bomb |
+    | **Post-plant** | The phase after the bomb is planted — attackers defend the bomb, defenders push to defuse |
+    | **Eco round** | A round where one team buys minimal equipment to save resources |
+    | **Clutch** | One player remaining alive against multiple opponents |
+
+    **Observer priorities:**
+    - Follow the bomb carrier during the attack phase — they are the narrative center
+    - Cut to a wide angle when teams clash at a site entrance
+    - **Post-plant** is high tension — stay on the fight around the bomb, not away from it
+    - **Clutch situations** (1vX) — stay on the surviving player, hide the opponent count from the overlay if possible to maintain suspense
+  </Tab>
+  <Tab value="Hardpoint">
+    Hardpoint is a rotating capture mode. A single zone (the **Hardpoint**) is active at a time, and teams earn score by occupying it. The zone rotates to new locations throughout the match.
+
+    **Key callouts:**
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Hardpoint** | The active capture zone |
+    | **HP score** | Points earned by occupying the Hardpoint — first team to the score limit wins |
+    | **Rotation** | Moving to the next Hardpoint location before or as it activates |
+    | **Hill** | Informal name for the Hardpoint zone ("on the hill", "taking the hill") |
+    | **Contest** | Both teams have players in the Hardpoint simultaneously — score pauses |
+
+    **Observer priorities:**
+    - The active Hardpoint is always the primary focus
+    - Watch for **rotation fights** — teams often clash while moving to the next zone
+    - **Contest moments** (both teams in the zone) are peak tension — stay wide to show both teams
+  </Tab>
+  <Tab value="Team Deathmatch">
+    Team Deathmatch (TDM) is a score-based elimination mode. Teams earn points for eliminations. First team to the kill limit wins.
+
+    **Observer priorities:**
+    - Follow high-kill players — they are the story
+    - Cut to **multi-kill moments** immediately — killstreaks and double/triple kills are the broadcast highlight
+    - Watch for **killstreak activations** (UAV, VTOL) — these shift momentum and are visually distinct
+    - TDM has no fixed objective zone, so the observer must read the flow of the match and stay in the action
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="In S&D, should I show the bomb location before it's planted?">
+    Yes — showing the bomb carrier and their route builds anticipation. Once the plant begins, stay on the bomb site and the fight around it. Do not cut away from an active plant or defuse.
+  </Accordion>
+  <Accordion title="In BR, what do I do during the looting phase when there's no action?">
+    Cut to a cinematic wide shot of the map or follow the squad as they move. Use this low-action phase to establish context — show where the squad is relative to the safe zone. Keep cuts fluid and avoid lingering on a single player doing nothing for more than 10–15 seconds.
+  </Accordion>
+</Accordions>

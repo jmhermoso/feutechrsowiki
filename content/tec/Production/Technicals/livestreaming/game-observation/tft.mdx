@@ -1,0 +1,120 @@
+---
+title: Teamfight Tactics
+description: Observer guide for TFT — auto battler covering carousel priority, augment selection, board transitions, econ management, and Double Up format.
+icon: LayoutGrid
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+
+# Teamfight Tactics
+
+Teamfight Tactics (TFT) is an auto battler developed by Riot Games, based in the League of Legends universe. Players draft champions from a shared pool, position them on a hexagonal board, and watch them fight automatically against other players' boards. The last player (or team in Double Up) with health remaining wins.
+
+<Callout type="info" title="TFT is not real-time combat">
+  Unlike other titles, TFT combat is automated — players do not control their units during fights. The observer's role is to show the most important moments in the draft, positioning, and combat phases, and to help viewers understand board states quickly.
+</Callout>
+
+## Match Structure
+
+| Term | Meaning |
+| :--- | :--- |
+| **Player HP** | Each player starts with a set amount of health (typically 100) — losing combat rounds reduces it |
+| **Eliminated** | A player whose HP reaches 0 — they are out of the game |
+| **Lobby** | All players competing in a single TFT game — typically 8 in standard, 4 teams in Double Up |
+| **Round** | A single combat or carousel phase |
+| **Stage** | A group of rounds (e.g. Stage 2 = rounds 2-1 through 2-6) |
+| **PvP round** | A round where your board fights another player's board |
+| **PvE round** | A round where your board fights neutral monsters (creeps) |
+
+## Key Mechanics
+
+<Tabs items={['Carousel', 'Augments', 'Economy (Econ)', 'Board and Traits', 'Double Up']}>
+  <Tab value="Carousel">
+    The Carousel is a shared phase where all players circle a rotating ring of champions and select one. Priority (pick order) is given to players with lower HP — a catch-up mechanic for struggling players.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Carousel** | The rotating champion selection phase — occurs at set intervals |
+    | **Prismatic Carousel** | An early or special carousel featuring high-value 5-cost units or emblems |
+    | **Emblem** | A carousel item that grants a trait to any unit — highly contested |
+    | **Pick order** | Lower HP players pick first — the weakest player gets first choice |
+    | **Contested pick** | Two or more players targeting the same carousel item |
+
+    **Observer priority:** The Carousel phase is a key broadcast moment. Show the full ring, then follow the most contested item — two players reaching for the same emblem is the drama. After the carousel, pan to the board of the player who got the most impactful pick.
+  </Tab>
+  <Tab value="Augments">
+    Three times per game, players are offered a choice of three augments — passive modifiers that change how their board plays. Augment selections are major decision points that shape the entire game.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Augment** | A passive modifier chosen from three options — permanently affects the player's board |
+    | **Silver Augment** | Base tier — moderate power level |
+    | **Gold Augment** | Mid tier — strong power level |
+    | **Prismatic Augment** | Highest tier — extremely powerful, often defines the game plan |
+    | **Augment anvil** | An item that lets a player choose one of three augments at will |
+    | **Reroll** | Spending gold to get different shop options |
+
+    **Observer priority:** Augment selection phases are high-interest moments for the audience. Pan through key players' selections — especially Prismatic picks. A player receiving a Prismatic Augment that synergizes with their board is a turning point.
+  </Tab>
+  <Tab value="Economy (Econ)">
+    Managing gold efficiently is the primary skill expression in TFT. Players earn interest on gold held at the end of a round, incentivizing saving.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Gold** | The in-game currency — used to buy units, refresh the shop, and level up |
+    | **Interest** | Bonus gold earned at the end of a round based on current gold held (1 gold per 10, up to 5) |
+    | **Econ** | Economy — refers to a player's gold management and spending strategy |
+    | **Fast 8 / Fast 9** | An aggressive econ strategy to reach level 8 or 9 quickly for access to high-cost units |
+    | **Reroll** | Spending gold to refresh the shop, seeking specific units |
+    | **Contested unit** | A unit multiple players are trying to collect — harder to find when contested |
+    | **3-star** | A unit upgraded to its maximum power by collecting three copies — a major power spike |
+
+    **Observer priority:** A player hitting a 3-star on a key unit, or leveling to 9, is a broadcast moment — their board power jumps significantly. Show the board composition change.
+  </Tab>
+  <Tab value="Board and Traits">
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Board** | The 4x7 hexagonal grid where units are positioned |
+    | **Bench** | The holding area below the board — units here do not fight |
+    | **Trait** | A synergy bonus activated by fielding a set number of units sharing the same trait |
+    | **Active trait** | A trait threshold that has been reached — the bonus is active |
+    | **Completed comp** | A player has assembled their intended full board composition |
+    | **Frontline** | Tanks and durable units placed at the front of the board to absorb damage |
+    | **Backline** | Damage dealers and supports placed at the back, protected by the frontline |
+    | **Positioning** | The deliberate placement of units to counter the opponent's board layout |
+
+    **Observer priority:** Board state tells the whole story in TFT. A player with a fully completed comp and all active traits is powerful. A player on a loss streak with a half-built board is in danger. Show board states clearly — zoom out enough that the full board and trait panel are visible.
+  </Tab>
+  <Tab value="Double Up">
+    Double Up is a 2v2v2v2 format where teams of two share gold and items and can support each other between rounds.
+
+    | Term | Meaning |
+    | :--- | :--- |
+    | **Partner** | The teammate in Double Up — you share items and can send units to their board |
+    | **Shared pool** | Both partners draw from the same champion pool — coordination on unit selection is key |
+    | **Transfer** | Sending a unit from your bench to your partner's board or bench |
+    | **Team HP** | Combined health of both partners — both losing a round in the same phase deals extra damage |
+    | **Duo synergy** | Coordinating board compositions between partners to cover weaknesses |
+
+    **Observer priorities in Double Up:**
+    - Show **both partners' boards** when a fight phase begins — the split outcome affects both team HPs
+    - **Transfers between partners** are strategic moments — show the unit being sent and the context
+    - Track **team HP** — when a duo is close to elimination, both boards are the broadcast focus simultaneously
+    - The **final round** (last team) is the climax — treat it the same as a top-2 fight in standard TFT
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<Accordions>
+  <Accordion title="TFT fights happen simultaneously — how do I know which one to show?">
+    Prioritize fights involving the players with the lowest HP (closest to elimination), fights where a 3-star unit's power is being demonstrated, or fights where the outcome will decide the lobby ranking. When multiple high-stakes fights happen at once, call it over comms — the TD may want a split-screen or a rapid cut sequence.
+  </Accordion>
+  <Accordion title="When is the right time to show a player's board vs. the combat?">
+    Show the board during the planning phase when traits are being activated and positioning is being set. Show the combat during the fight phase. The transition point (planning ends, fight begins) is when you cut from the overhead board view to a closer combat angle.
+  </Accordion>
+</Accordions>
