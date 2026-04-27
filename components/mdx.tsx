@@ -5,6 +5,7 @@ import { Mermaid } from '@/components/mdx/mermaid';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { File, Files, Folder } from 'fumadocs-ui/components/files';
 
 // 2. Change 'Promise<MDXComponents>' to just 'MDXComponents'
 export function getMDXComponents(
@@ -20,6 +21,9 @@ export function getMDXComponents(
     Tabs,
     Steps,
     Step,
+    Files,
+    File,
+    Folder,
     ...base,
     ...(orgId
       ? {

@@ -46,28 +46,35 @@ YYYYMMDD_ProjectName_ClipDescription_V01.ext
 
 The folder structure is **sacred**. Any new editor must understand the project within 30 seconds of opening the folder. Deviating is not permitted.
 
-```
-YYYYMMDD_ProjectName/
-├── 01_RAW/
-│   ├── Camera_A/
-│   ├── Camera_B/
-│   └── Audio_Stems/
-├── 02_AUDIO/
-│   ├── Dialogue/
-│   ├── SFX/
-│   └── Music/
-├── 03_ASSETS/
-│   ├── Graphics/
-│   ├── Logos/
-│   └── Stills/
-├── 04_PROJECT_FILES/
-│   ├── DaVinci/
-│   └── Premiere/
-└── 05_EXPORTS/
-    ├── Master_4K/
-    ├── Web_1080p/
-    └── Social_9_16/
-```
+<Files>
+  <Folder name="YYYYMMDD_ProjectName" defaultOpen>
+    <Folder name="01_RAW">
+      <Folder name="Camera_A" />
+      <Folder name="Camera_B" />
+      <Folder name="Audio_Stems" />
+    </Folder>
+    <Folder name="02_AUDIO">
+      <Folder name="Dialogue" />
+      <Folder name="SFX" />
+      <Folder name="Music" />
+    </Folder>
+    <Folder name="03_ASSETS">
+      <Folder name="Graphics" />
+      <Folder name="Logos" />
+      <Folder name="Stills" />
+    </Folder>
+    <Folder name="04_PROJECT_FILES">
+      <Folder name="DaVinci" />
+      <Folder name="Premiere" />
+      <Folder name="After Effects" />
+    </Folder>
+    <Folder name="05_EXPORTS">
+      <Folder name="Master_4K" />
+      <Folder name="Web_1080p" />
+      <Folder name="Social_9_16" />
+    </Folder>
+  </Folder>
+</Files>
 
 <Callout type="info" title="Folder Discipline">
   Never save a project file to the desktop or a personal drive. All project data lives in this structure on the shared Production drive. If it's not in the folder structure, it doesn't exist for the team.

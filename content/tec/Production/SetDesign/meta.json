@@ -1,7 +1,10 @@
 {
-  "title": "Set Design",
-  "icon": "LayoutDashboard",
+  "title": "Set Design and Fabrication",
+  "icon": "Hammer",
   "pages": [
-
+    "design-and-budget",
+    "fabrication",
+    "setup-and-strike",
+    "appendix"
   ]
 }
