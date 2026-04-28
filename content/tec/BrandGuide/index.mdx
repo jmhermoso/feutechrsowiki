@@ -19,3 +19,17 @@ icon: palette
 - **Templates**: Branded slide decks, letterheads, and flyer foundations
 - **Photography Standards**: Guidelines for event coverage and subject framing
 - **Merchandise Rules**: Placement and printing specifications for org apparel
+
+<Puzzle>
+  <Piece name="A" icon="🔋">Battery A</Piece>
+  <Piece name="B" icon="🔋">Battery B</Piece>
+  <Tile name="C" icon="⚡">Power Hub</Tile>
+  <Graph 
+    solution={[
+      { from: "A", to: "C" },
+      { from: "B", to: "C" }
+    ]}
+    successMessage="🎉 Perfect! Both batteries connected!"
+    failureMessage="❌ Not quite. Check your connections."
+  />
+</Puzzle>
